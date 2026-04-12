@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="id" class="light scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Muhammad Abdillah Ahmad - Profile</title>
+    <meta name="description" content="Portfolio Muhammad Abdillah Ahmad - Mahasiswa Teknik Komputer dan Jaringan. Berdedikasi dalam inovasi sistem terintegrasi dan infrastruktur IT.">
+    <meta name="keywords" content="Muhammad Abdillah Ahmad, Portfolio, Web Developer, Network Administrator, Politeknik Negeri Ujung Pandang">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://abdillah-profile.vercel.app/">
+    <meta property="og:title" content="Muhammad Abdillah Ahmad - Profile">
+    <meta property="og:description" content="Mahasiswa Teknik Komputer dan Jaringan yang berfokus pada pembangunan sistem dan infrastruktur IT yang andal.">
+    <meta property="og:image" content="./assets/profile-preview.png">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:title" content="Muhammad Abdillah Ahmad - Profile">
+    <meta property="twitter:description" content="Mahasiswa Teknik Komputer dan Jaringan yang berfokus pada pembangunan sistem dan infrastruktur IT yang andal.">
+    <meta property="twitter:image" content="./assets/profile-preview.png">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Playfair+Display:ital,wght@0,600;0,800;1,600;1,800&display=swap"
+        rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="./css/style.css">
+
+    <!-- Phosphor Icons -->
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+
+    <!-- Tailwind CSS (CDN for static execution) -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        primary: {
+                            600: '#1e3aeb', // Adjusted blue to closely match the image
+                            700: '#1225ba',
+                        },
+                        dark: {
+                            bg: '#121212',
+                            card: '#1e1e1e',
+                            text: '#f3f4f6'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        serif: ['Playfair Display', 'serif'],
+                    },
+                    animation: {
+                        'marquee': 'marquee 25s linear infinite',
+                    },
+                    keyframes: {
+                        marquee: {
+                            '0%': { transform: 'translateX(0%)' },
+                            '100%': { transform: 'translateX(-50%)' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+
+<body
+    class="bg-gray-100 text-black dark:bg-dark-bg dark:text-dark-text overflow-x-hidden font-sans selection:bg-primary-600 selection:text-white">
+
+    <!-- Scroll Progress Bar -->
+    <div id="scrollProgress" class="fixed top-0 left-0 h-1 bg-primary-600 z-[100] transition-all duration-200" style="width: 0%;"></div>
+
+    <!-- Back to Top Button -->
+    <button id="backToTop" class="fixed bottom-8 right-8 w-12 h-12 bg-primary-600 text-white rounded-full flex items-center justify-center z-50 shadow-2xl transition-all duration-500 opacity-0 translate-y-10 scale-50 hover:bg-primary-700">
+        <i class="ph ph-caret-up text-xl"></i>
+    </button>
+
+    <!-- Mobile Menu Container -->
+    <div id="mobileMenu" class="fixed inset-0 z-[150] opacity-0 pointer-events-none transition-all duration-300">
+        <!-- Backdrop -->
+        <div id="mobileMenuBackdrop" class="absolute inset-0 bg-black/20 dark:bg-black/60 backdrop-blur-md"></div>
+        
+        <!-- Drawer -->
+        <div id="mobileMenuDrawer" class="absolute inset-y-0 right-0 w-full max-w-[300px] bg-white dark:bg-dark-bg border-l border-black/5 dark:border-white/5 shadow-[-20px_0_50px_rgba(0,0,0,0.1)] translate-x-full transition-transform duration-500 flex flex-col">
+            <!-- Drawer Header -->
+            <div class="px-8 py-10 flex items-center justify-between border-b border-black/5 dark:border-white/5">
+                <span class="font-black text-xl tracking-tighter uppercase">Menu</span>
+                <button id="closeMenuBtn" class="text-3xl hover:text-primary-600 transition-colors">
+                    <i class="ph ph-x"></i>
+                </button>
+            </div>
+
+            <!-- Scrollable Navigation -->
+            <div class="flex-grow overflow-y-auto px-8 py-10">
+                <nav class="flex flex-col gap-6 font-sans font-bold text-2xl tracking-tighter uppercase">
+                    <a href="#" class="mobile-link flex items-center gap-4 group">
+                        <i class="ph ph-house-line text-primary-600"></i>
+                        <span>Home</span>
+                    </a>
+                    <a href="#about" class="mobile-link flex items-center gap-4 group">
+                        <i class="ph ph-user-focus text-primary-600"></i>
+                        <span>About</span>
+                    </a>
+                    <a href="#skills" class="mobile-link flex items-center gap-4 group">
+                        <i class="ph ph-magic-wand text-primary-600"></i>
+                        <span>Skills</span>
+                    </a>
+                    <a href="#projects" class="mobile-link flex items-center gap-4 group">
+                        <i class="ph ph-folder-simple text-primary-600"></i>
+                        <span>Projects</span>
+                    </a>
+                    <a href="#experience" class="mobile-link flex items-center gap-4 group">
+                        <i class="ph ph-briefcase-metal text-primary-600"></i>
+                        <span>Experience</span>
+                    </a>
+                    <a href="#education" class="mobile-link flex items-center gap-4 group">
+                        <i class="ph ph-student text-primary-600"></i>
+                        <span>Education</span>
+                    </a>
+                    <a href="#certificates" class="mobile-link flex items-center gap-4 group">
+                        <i class="ph ph-certificate text-primary-600"></i>
+                        <span>Certificates</span>
+                    </a>
+                </nav>
+            </div>
+
+            <!-- Drawer Footer -->
+            <div class="px-8 py-10 bg-gray-50 dark:bg-black/20 border-t border-black/5 dark:border-white/5">
+                <p class="text-[10px] font-bold text-gray-400 uppercase tracking-widest mb-4">Connect with me</p>
+                <div class="flex gap-4">
+                    <a href="#" class="text-xl hover:text-primary-600 transition-colors"><i class="ph ph-instagram-logo"></i></a>
+                    <a href="#" class="text-xl hover:text-primary-600 transition-colors"><i class="ph ph-linkedin-logo"></i></a>
+                    <a href="#" class="text-xl hover:text-primary-600 transition-colors"><i class="ph ph-github-logo"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Navbar -->
+    <nav class="fixed top-0 left-0 w-full z-50 bg-gray-100/80 dark:bg-dark-bg/80 backdrop-blur-md pt-6 pb-4">
+        <div class="max-w-[90rem] mx-auto px-8 md:px-12 flex items-center justify-between">
+            <a href="#" class="font-extrabold text-2xl tracking-tighter uppercase" id="navName">Profile</a>
+
+            <!-- Theme Toggle styled as a pill button -->
+            <button id="themeToggle"
+                class="hidden md:flex items-center gap-2 border border-black/20 dark:border-white/20 rounded-full px-5 py-2 hover:bg-gray-200 dark:hover:bg-gray-800 transition-colors text-[10px] font-bold uppercase tracking-widest">
+                <i class="ph ph-magic-wand"></i>
+                <span>Change the mode</span>
+            </button>
+
+            <!-- Hamburger menu icon -->
+            <button id="mobileMenuBtn" class="text-3xl relative z-[100] transition-transform duration-300 hover:scale-110">
+                <i class="ph ph-list" id="menuIcon"></i>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Hero Section (Exact Replica of Image) -->
+    <section
+        class="relative bg-gray-100 dark:bg-dark-bg min-h-[80vh] md:min-h-screen pt-10 sm:pt-20 md:pt-28 overflow-hidden flex flex-col items-center">
+        <!-- Text Layers (Placed strictly behind the subject to mimic the design) -->
+        <div
+            class="absolute inset-0 flex flex-col items-center justify-start md:justify-center pointer-events-none pt-28 sm:pt-36 md:pt-0">
+            <!-- Line 1: serif italic (Centered strictly behind the head without gaps, responsive) -->
+            <div class="flex w-full items-center justify-center mb-4 md:mb-2 z-0">
+                <span id="heroJudul"
+                    class="font-serif italic text-3xl sm:text-5xl md:text-[9vw] font-medium tracking-tight whitespace-nowrap text-center">Saya
+                    Mahasiswa</span>
+            </div>
+
+            <!-- Line 2: huge blue sans -->
+            <div id="heroJurusanText"
+                class="flex flex-col w-full items-center justify-center relative z-0 text-primary-600 font-black text-[9vw] sm:text-[8vw] md:text-[9vw] leading-[0.9] md:leading-[0.8] tracking-tighter uppercase whitespace-normal md:whitespace-nowrap text-center opacity-90 md:opacity-100">
+                <!-- Javascript will inject "TEKNIK INFORMATIKA DAN KOMPUTER" here -->
+            </div>
+        </div>
+
+        <!-- Portrait Overlay -->
+        <div
+            class="relative z-10 w-full flex-grow flex items-end justify-center pointer-events-none mt-auto pt-2 md:pt-10 px-2 md:px-0">
+            <!-- Transparent PNG handling -->
+            <img src="./assets/profile.png" alt="Portrait"
+                class="w-auto h-auto max-h-[65vh] sm:max-h-[70vh] md:max-h-[85vh] max-w-[120%] md:max-w-none object-contain object-bottom pointer-events-auto drop-shadow-[0_10px_30px_rgba(0,0,0,0.5)] dark:drop-shadow-[0_10px_30px_rgba(0,0,0,0.8)] hover:scale-[1.02] transition-transform duration-500">
+
+            <!-- Pill button in front of user -->
+            <a href="#about" id="cvLink"
+                class="absolute bottom-6 md:bottom-20 left-1/2 -translate-x-1/2 bg-primary-600 text-white px-8 py-3 md:px-10 md:py-4.5 rounded-full font-bold text-[10px] md:text-xs hover:bg-primary-700 hover:scale-105 transition-all uppercase tracking-widest shadow-[0_10px_40px_rgba(30,58,235,0.4)] pointer-events-auto whitespace-nowrap">
+                LIHAT CV
+            </a>
+        </div>
+
+        <!-- Bottom Layout -->
+        <div
+            class="w-full max-w-[90rem] mx-auto absolute bottom-8 z-20 flex flex-col md:flex-row justify-between items-start md:items-end px-8 md:px-12 gap-6 md:gap-0 hidden md:flex">
+            <!-- Left text block -->
+            <div class="max-w-[280px]">
+                <div class="w-8 h-[1px] bg-black dark:bg-white mb-3"></div>
+                <p class="text-[10px] font-bold uppercase leading-relaxed tracking-wider">
+                    PROGRAM STUDI <span id="heroProgram" class="text-primary-600">TEKNIK KOMPUTER DAN JARINGAN</span>,
+                    JURUSAN <span id="heroDept">TEKNIK INFORMATIKA DAN KOMPUTER</span>.
+                </p>
+            </div>
+
+            <!-- Right text block -->
+            <div class="max-w-[220px] text-right">
+                <p class="text-[10px] text-gray-500 font-medium leading-relaxed">
+                    <span id="heroStatus" class="font-bold text-black dark:text-white">Mahasiswa Semester 6</span>.
+                    Berdedikasi untuk terus berinovasi dan membangun sistem terintegrasi yang andal.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Social Media Infinite Marquee Strip -->
+    <div
+        class="bg-gray-100 dark:bg-[#0B1120] py-6 border-y border-black/5 dark:border-white/5 flex overflow-hidden whitespace-nowrap w-full relative z-20 transition-colors duration-300">
+        <div id="marqueeContainer" class="animate-marquee flex items-center justify-start w-max">
+            <!-- Javascript will duplicate and populate social media blocks here -->
+        </div>
+    </div>
+
+    <!-- About Section (Image 1 Reference Layout) -->
+    <section id="about"
+        class="bg-white dark:bg-dark-card py-20 md:py-32 relative overflow-hidden transition-colors duration-300">
+
+        <!-- Mobile Title (Appears at the very top of the section on small screens before the image) -->
+        <div class="w-full text-center mb-6 block md:hidden px-6">
+            <h2 class="text-5xl font-black text-black dark:text-white">
+                About <span class="text-primary-600 font-serif italic text-6xl">Me</span>
+            </h2>
+        </div>
+
+        <div class="max-w-[75rem] mx-auto flex flex-col md:flex-row items-center justify-center gap-10 md:gap-20">
+
+            <!-- Left: Image with abstract background (Vertically Centered to balance perfectly with right side text block) -->
+            <div class="w-full md:w-5/12 relative flex items-center justify-center px-4 md:px-0 reveal reveal-left">
+                <!-- Background Shape -->
+                <div class="absolute inset-0 flex items-center justify-center">
+                    <div
+                        class="w-72 h-72 md:w-96 md:h-96 bg-primary-600/10 dark:bg-primary-600/20 rounded-full blur-3xl absolute">
+                    </div>
+                    <svg class="w-80 h-80 md:w-[32rem] md:h-[32rem] text-primary-600 absolute opacity-5 dark:opacity-10 transform -rotate-12"
+                        viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+                        <path fill="currentColor"
+                            d="M45.7,-76.1C58.9,-69.3,69.1,-55.4,78.2,-41.2C87.3,-27,95.3,-12.4,94.1,1.7C92.9,15.8,82.5,29.4,72.6,41.9C62.7,54.4,53.3,65.8,40.9,72.4C28.5,79,13.1,80.8,-2.1,83.8C-17.3,86.8,-34.6,90.9,-48.4,84.4C-62.2,77.9,-72.5,60.8,-80.4,44.2C-88.3,27.5,-93.8,11.3,-92.4,-4.1C-91,-19.5,-82.7,-34.1,-72.3,-46.1C-61.9,-58.1,-49.4,-67.5,-36.2,-74.3C-23,-81.1,-11.5,-85.3,2.2,-88.4C15.9,-91.5,32.5,-82.9,45.7,-76.1Z"
+                            transform="translate(100 100)" />
+                    </svg>
+                </div>
+                <!-- Profile Image: Restoring its natural centering and size -->
+                <img src="./assets/About%20me.png" alt="About Portrait"
+                    class="relative z-10 w-full max-w-[320px] md:max-w-[420px] object-contain drop-shadow-[0_20px_50px_rgba(0,0,0,0.4)]">
+            </div>
+
+            <!-- Right: Content block -->
+            <div class="w-full md:w-7/12 text-center md:text-left px-6 md:px-0 reveal reveal-right">
+                <!-- Desktop Title (Hidden on Mobile since it exists at the top) -->
+                <h2 class="text-5xl md:text-6xl font-black mb-8 text-black dark:text-white hidden md:block">
+                    About <span class="text-primary-600 font-serif italic text-6xl md:text-7xl">Me</span>
+                </h2>
+
+                <!-- Gray Box for paragraph, directly under image in Mobile -->
+                <div
+                    class="bg-gray-100 dark:bg-dark-bg p-8 md:p-10 rounded-3xl mb-10 shadow-sm border border-gray-200 dark:border-gray-800 text-left relative z-10">
+                    <p id="aboutText"
+                        class="text-gray-600 dark:text-gray-400 text-lg md:text-xl leading-relaxed font-medium">
+                        Memuat deskripsi diri...
+                    </p>
+                </div>
+
+                <!-- Stats Row -->
+                <div class="flex flex-wrap justify-center md:justify-start items-center gap-8 md:gap-16 mb-12">
+                    <div class="text-center md:text-left">
+                        <h3 class="text-primary-600 font-black text-5xl md:text-6xl mb-1">6</h3>
+                        <p class="text-xs text-gray-500 uppercase tracking-widest font-bold">Semester</p>
+                    </div>
+                    <div class="text-center md:text-left">
+                        <h3 class="text-primary-600 font-black text-5xl md:text-6xl mb-1">10+</h3>
+                        <p class="text-xs text-gray-500 uppercase tracking-widest font-bold">Projects</p>
+                    </div>
+                    <div class="text-center md:text-left">
+                        <h3 class="text-primary-600 font-black text-5xl md:text-6xl mb-1">5+</h3>
+                        <p class="text-xs text-gray-500 uppercase tracking-widest font-bold">Sertifikat</p>
+                    </div>
+                </div>
+
+                <!-- Outline Button -->
+                <a href="#projectsContainer"
+                    class="inline-block border-2 border-primary-600 text-primary-600 hover:bg-primary-600 hover:text-white transition-colors px-10 py-4 rounded-full font-bold uppercase tracking-widest text-[10px] md:text-xs">
+                    Learn More
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="bg-gray-50/50 dark:bg-dark-bg w-full py-20 md:py-32 relative overflow-hidden transition-colors duration-300 border-y border-black/5 dark:border-white/5">
+        <div class="max-w-[90rem] mx-auto px-8 md:px-12 relative z-10 text-center">
+            <!-- Header Text -->
+            <div class="flex flex-col items-center reveal mb-20 md:mb-32">
+                <h2 class="text-primary-600 font-serif italic text-6xl md:text-[5.5rem] block md:inline">
+                    My <span class="text-black dark:text-white font-sans font-black text-5xl md:text-7xl tracking-tighter uppercase leading-none">Skills</span>
+                </h2>
+                <div class="w-16 h-1 bg-primary-600/20 my-8 rounded-full"></div>
+                <p class="max-w-xl mx-auto text-gray-500 dark:text-gray-400 text-sm md:text-base font-medium leading-relaxed">
+                    Penguasaan berbagai teknologi modern untuk membangun sistem yang aman, 
+                    skalabel, dan efisien demi menunjang kebutuhan infrastruktur IT masa depan.
+                </p>
+            </div>
+
+            <!-- Skills Grid Container -->
+            <div id="skillsContainer"
+                class="flex flex-wrap justify-center gap-6 md:gap-8 pb-10">
+                <!-- Javascript will populate these as modern service cards -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Project Section -->
+    <section id="projects" class="bg-gray-100 dark:bg-dark-bg text-black dark:text-white py-24 px-8 md:px-12">
+        <div class="max-w-[80rem] mx-auto">
+            <!-- Header matching the "PRICING plan" typography -->
+            <div class="text-center mb-20 flex flex-col items-center justify-center reveal">
+                <h2 class="text-primary-600 font-serif italic text-6xl md:text-[5.5rem] block md:inline">
+                    My <span class="text-black dark:text-white font-sans font-black text-5xl md:text-7xl tracking-tighter uppercase leading-none">Projects</span>
+                </h2>
+                <div class="w-16 h-1 bg-primary-600/20 my-8 rounded-full"></div>
+            </div>
+
+            <!-- Project Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" id="projectsContainer">
+                <!-- Javascript will populate these -->
+            </div>
+
+            <!-- Experience Section -->
+            <div id="experience" class="mt-40 reveal">
+                <div class="flex items-center justify-center mb-16">
+                    <h2 class="text-primary-600 font-serif italic text-6xl md:text-[5.5rem] block md:inline">
+                        My <span class="text-black dark:text-white font-sans font-black text-5xl md:text-7xl tracking-tighter uppercase leading-none">Experience</span>
+                    </h2>
+                </div>
+                
+                <div id="experienceContainer" class="grid grid-cols-1 md:grid-cols-2 gap-10">
+                    <!-- Javascript will populate these as modern timeline cards -->
+                </div>
+            </div>
+
+            <div class="mt-40" id="education">
+                <!-- Education -->
+                <div class="reveal reveal-left mb-32">
+                    <div class="mb-12">
+                        <h2 class="text-primary-600 font-serif italic text-5xl md:text-6xl block md:inline">
+                            My <span class="text-black dark:text-white font-sans font-black text-3xl md:text-5xl tracking-tighter uppercase leading-none">Education</span>
+                        </h2>
+                        <div class="h-[1px] w-32 bg-primary-600/20 mt-4 rounded-full"></div>
+                    </div>
+                    <div id="educationContainer" class="grid grid-cols-1 md:grid-cols-2 gap-x-16 gap-y-8">
+                        <!-- Javascript will populate these -->
+                    </div>
+                </div>
+
+                <!-- Certificates -->
+                <div id="certificates" class="reveal">
+                    <div class="mb-12">
+                        <h2 class="text-primary-600 font-serif italic text-5xl md:text-6xl block md:inline">
+                            My <span class="text-black dark:text-white font-sans font-black text-3xl md:text-5xl tracking-tighter uppercase leading-none">Certificates</span>
+                        </h2>
+                        <div class="h-[1px] w-32 bg-primary-600/20 mt-4 rounded-full"></div>
+                    </div>
+                    <div id="certificatesContainer" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10 items-start">
+                        <!-- Javascript will populate these as cards with images -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer
+        class="bg-gray-50 dark:bg-[#050505] text-black dark:text-white pt-24 pb-12 px-8 md:px-12 border-t border-black/5 dark:border-white/10 mt-20 reveal">
+        <div class="max-w-[80rem] mx-auto">
+            <div
+                class="flex flex-col md:flex-row justify-between items-start md:items-center gap-10 md:gap-4 text-gray-500 dark:text-gray-400">
+                <div class="flex flex-col gap-1 w-full md:w-1/2">
+                    <h3 id="footerName"
+                        class="text-xl md:text-2xl font-black text-black dark:text-white tracking-widest uppercase mb-1">ABDIL.</h3>
+                    <p id="footerStatus"
+                        class="text-[11px] md:text-xs font-medium uppercase tracking-widest opacity-80 leading-relaxed">
+                        Mahasiswa</p>
+                </div>
+
+                <div class="flex flex-col md:items-end gap-4 w-full md:w-1/2">
+                    <p class="text-[10px] uppercase tracking-widest font-bold opacity-50">Connect with me</p>
+                    <div class="flex flex-wrap gap-3" id="socialContainer">
+                        <!-- Javascript will populate these -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="./script.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,12 @@
+{
+  "name": "profile-web",
+  "version": "1.0.0",
+  "description": "Static profile website",
+  "scripts": {
+    "build:css": "tailwindcss -i ./src/input.css -o ./css/style.css",
+    "dev:css": "tailwindcss -i ./src/input.css -o ./css/style.css --watch"
+  },
+  "devDependencies": {
+    "tailwindcss": "^3.4.1"
+  }
+}

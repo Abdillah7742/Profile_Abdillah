@@ -1,0 +1,175 @@
+{
+  "profile": {
+    "judul": "Saya Mahasiswa",
+    "jurusan": "TEKNIK INFORMATIKA DAN KOMPUTER",
+    "name": "Muhammad Abdillah Ahmad",
+    "status": "Mahasiswa Semester 6",
+    "department": "Teknik Informatika dan Komputer",
+    "program": "Teknik Komputer dan Jaringan",
+    "about": "Halo! Saya Muhammad Abdillah Ahmad, mahasiswa semester 6 Teknik Komputer dan Jaringan di Politeknik Negeri Ujung Pandang yang berdedikasi dalam menjembatani fungsionalitas sistem dengan infrastruktur IT yang tangguh. Sebagai pengembang web, saya memiliki pengalaman dalam menggunakan framework Laravel dan Flask, serta saat ini tengah memperluas kapabilitas front-end menggunakan React JS. Tidak hanya fokus pada perangkat lunak, saya juga aktif mendalami manajemen server dan jaringan melalui pengelolaan homelab mandiri serta konfigurasi perangkat Mikrotik. Berbekal pengalaman sebagai desainer di berbagai kepanitiaan dan organisasi, saya mampu bekerja secara kolaboratif dalam tim untuk menghasilkan solusi teknis yang efisien dan terstruktur.",
+    "cv_link": "#"
+  },
+  "social_media": [
+    {
+      "platform": "Instagram",
+      "link": "https://instagram.com/abdillah7742",
+      "icon": "ph-instagram-logo"
+    },
+    {
+      "platform": "Github",
+      "link": "https://github.com/abdillah7742",
+      "icon": "ph-github-logo"
+    },
+    {
+      "platform": "LinkedIn",
+      "link": "https://www.linkedin.com/in/muhammad-abdillah-ahmad-95b814402/",
+      "icon": "ph-linkedin-logo"
+    }
+  ],
+  "pbl_projects": [
+    {
+      "title": "Judul",
+      "year": "Tahun Ajaran",
+      "matkul": "Matkul",
+      "description": "Deskripsi",
+      "link": "#"
+    }
+  ],
+  "education": [
+    {
+      "institution": "SD INPRES BATUA I",
+      "year": "2010 - 2011",
+      "degree": "Pendidikan Dasar",
+      "description": "Menyelesaikan pendidikan dasar dengan baik."
+    },
+    {
+      "institution": "SD INPRES TAMALANREA II MAKASSAR",
+      "year": "2011 - 2016",
+      "degree": "Pendidikan Dasar",
+      "description": "Menyelesaikan pendidikan dasar dengan baik."
+    },
+    {
+      "institution": "SMP Negeri 30 Makassar",
+      "year": "2016 - 2019",
+      "degree": "Pendidikan Menengah Pertama",
+      "description": "Aktif dalam ekstrakurikuler komputer dan sains."
+    },
+    {
+      "institution": "SMK PENERBANGAN TECHNO TERAPAN MAKASSAR",
+      "year": "2019 - 2022",
+      "degree": "Teknik Komputer dan Jaringan",
+      "description": "Jurusan Teknik Komputer dan Jaringan. Mendalami routing, switching, dan administrasi server linux sederhana."
+    },
+    {
+      "institution": "POLITEKNIK NEGERI UJUNG PANDANG",
+      "year": "2023 - Sekarang",
+      "degree": "D4 Teknik Komputer dan Jaringan",
+      "description": "Program Studi Teknik Komputer dan Jaringan, Jurusan Teknik Informatika dan Komputer. Fokus pada sistem jaringan terintegrasi dan Project Based Learning."
+    }
+  ],
+  "certificates": [
+    {
+      "title": "Cisco CCNA (Routing & Switching)",
+      "issuer": "Cisco Academy",
+      "year": "2023",
+      "image": "./assets/cert-ccna.png",
+      "type": "landscape"
+    },
+    {
+      "title": "MikroTik MTCNA",
+      "issuer": "MikroTik",
+      "year": "2024",
+      "image": "./assets/cert-mtcna.png",
+      "type": "landscape"
+    },
+    {
+      "title": "SK Kepengurusan Organisasi",
+      "issuer": "Politeknik Negeri Ujung Pandang",
+      "year": "2024",
+      "image": "./assets/sk-organisasi.png",
+      "type": "portrait"
+    }
+  ],
+  "skills": [
+    {
+      "name": "Junior Network Administrator",
+      "description": "Certified in managing and securing complex network infrastructures and active directory.",
+      "icon": "ph-globe-stand"
+    },
+    {
+      "name": "Web Development",
+      "description": "Building robust back-end systems using modern frameworks like Laravel and Flask.",
+      "icon": "ph-code"
+    },
+    {
+      "name": "Frontend Development",
+      "description": "Crafting interactive and responsive user interfaces with React JS and Tailwind CSS.",
+      "icon": "ph-browser"
+    },
+    {
+      "name": "Server Administration",
+      "description": "Expertise in Linux server management, Proxmox virtualization, and cloud hosting.",
+      "icon": "ph-hard-drives"
+    },
+    {
+      "name": "Network Engineering",
+      "description": "Advanced routing and switching configuration using MikroTik and Cisco devices.",
+      "icon": "ph-broadcast"
+    },
+    {
+      "name": "Internet of Things",
+      "description": "Developing smart systems using ESP32, Arduino, and various sensor integrations.",
+      "icon": "ph-cpu"
+    },
+    {
+      "name": "Virtualization & Docker",
+      "description": "Containerizing applications and managing microservices with Docker and Kubernetes.",
+      "icon": "ph-cube"
+    },
+    {
+      "name": "Network Monitoring",
+      "description": "Proactive infrastructure monitoring using tools like Zabbix, NetBox, and Grafana.",
+      "icon": "ph-activity"
+    },
+    {
+      "name": "Database Management",
+      "description": "Designing and optimizing relational databases with MySQL and PostgreSQL.",
+      "icon": "ph-database"
+    },
+    {
+      "name": "Graphic Design",
+      "description": "Creating impactful visual content and branding for various professional needs.",
+      "icon": "ph-paint-brush-broad"
+    }
+  ],
+  "experience": [
+    {
+      "role": "Internship (PKL) - Network Support",
+      "company": "PT. Telekomunikasi Indonesia",
+      "period": "Jan 2024 - Mar 2024",
+      "type": "PKL",
+      "description": "Membantu dalam monitoring performa jaringan backbone dan troubleshooting perangkat routing pelanggan."
+    },
+    {
+      "role": "Ketua Divisi Hubungan Masyarakat",
+      "company": "Himpunan Mahasiswa Elektro",
+      "period": "2023 - Sekarang",
+      "type": "Organisasi",
+      "description": "Mengelola komunikasi eksternal dan membangun kemitraan dengan berbagai organisasi mahasiswa di luar kampus."
+    },
+    {
+      "role": "Koordinator Perlengkapan",
+      "company": "Panitia Seminar Nasional Teknologi",
+      "period": "Okt 2023",
+      "type": "Panitia",
+      "description": "Bertanggung jawab atas ketersediaan seluruh infrastruktur teknis dan logistik selama acara berlangsung."
+    },
+    {
+      "role": "Senior Graphics Designer",
+      "company": "Media Kreatif Kampus",
+      "period": "2022 - 2023",
+      "type": "Teamwork",
+      "description": "Bekerja dalam tim kreatif untuk memproduksi konten visual bulanan bagi media sosial dan majalah kampus."
+    }
+  ]
+}
