@@ -74,20 +74,6 @@
       "year": "2023",
       "image": "./assets/cert-ccna.png",
       "type": "landscape"
-    },
-    {
-      "title": "MikroTik MTCNA",
-      "issuer": "MikroTik",
-      "year": "2024",
-      "image": "./assets/cert-mtcna.png",
-      "type": "landscape"
-    },
-    {
-      "title": "SK Kepengurusan Organisasi",
-      "issuer": "Politeknik Negeri Ujung Pandang",
-      "year": "2024",
-      "image": "./assets/sk-organisasi.png",
-      "type": "portrait"
     }
   ],
   "skills": [
@@ -100,76 +86,43 @@
       "name": "Web Development",
       "description": "Building robust back-end systems using modern frameworks like Laravel and Flask.",
       "icon": "ph-code"
-    },
-    {
-      "name": "Frontend Development",
-      "description": "Crafting interactive and responsive user interfaces with React JS and Tailwind CSS.",
-      "icon": "ph-browser"
-    },
-    {
-      "name": "Server Administration",
-      "description": "Expertise in Linux server management, Proxmox virtualization, and cloud hosting.",
-      "icon": "ph-hard-drives"
-    },
-    {
-      "name": "Network Engineering",
-      "description": "Advanced routing and switching configuration using MikroTik and Cisco devices.",
-      "icon": "ph-broadcast"
-    },
-    {
-      "name": "Internet of Things",
-      "description": "Developing smart systems using ESP32, Arduino, and various sensor integrations.",
-      "icon": "ph-cpu"
-    },
-    {
-      "name": "Virtualization & Docker",
-      "description": "Containerizing applications and managing microservices with Docker and Kubernetes.",
-      "icon": "ph-cube"
-    },
-    {
-      "name": "Network Monitoring",
-      "description": "Proactive infrastructure monitoring using tools like Zabbix, NetBox, and Grafana.",
-      "icon": "ph-activity"
-    },
-    {
-      "name": "Database Management",
-      "description": "Designing and optimizing relational databases with MySQL and PostgreSQL.",
-      "icon": "ph-database"
-    },
-    {
-      "name": "Graphic Design",
-      "description": "Creating impactful visual content and branding for various professional needs.",
-      "icon": "ph-paint-brush-broad"
     }
   ],
   "experience": [
     {
-      "role": "Internship (PKL) - Network Support",
-      "company": "PT. Telekomunikasi Indonesia",
-      "period": "Jan 2024 - Mar 2024",
-      "type": "PKL",
-      "description": "Membantu dalam monitoring performa jaringan backbone dan troubleshooting perangkat routing pelanggan."
+      "role": "??",
+      "company": "Dinas Komunikasi Informatika Statistik Dan Persandian Pemprov Sulsel",
+      "period": "Agustus 2022 - Oktober 2022",
+      "type": "PKL SMK",
+      "description": "??"
     },
     {
-      "role": "Ketua Divisi Hubungan Masyarakat",
-      "company": "Himpunan Mahasiswa Elektro",
-      "period": "2023 - Sekarang",
-      "type": "Organisasi",
-      "description": "Mengelola komunikasi eksternal dan membangun kemitraan dengan berbagai organisasi mahasiswa di luar kampus."
-    },
-    {
-      "role": "Koordinator Perlengkapan",
-      "company": "Panitia Seminar Nasional Teknologi",
-      "period": "Okt 2023",
+      "role": "Anggota Perlengkapan",
+      "company": "Baksos 23' HIMATIK-PNUP",
+      "period": "Juni 2024 - Juli 2024",
       "type": "Panitia",
-      "description": "Bertanggung jawab atas ketersediaan seluruh infrastruktur teknis dan logistik selama acara berlangsung."
+      "description": "??"
     },
     {
-      "role": "Senior Graphics Designer",
-      "company": "Media Kreatif Kampus",
-      "period": "2022 - 2023",
-      "type": "Teamwork",
-      "description": "Bekerja dalam tim kreatif untuk memproduksi konten visual bulanan bagi media sosial dan majalah kampus."
+      "role": "Anggota Acara dan PJ Moderator",
+      "company": "Sensation 2024 Digital Innovation JTIK-PNUP",
+      "period": "Juli 2024 - Desember 2024",
+      "type": "Panitia",
+      "description": "??"
+    },
+    {
+      "role": "Steering Committee",
+      "company": "Inaugurasi '24 HIMATIK-PNUP",
+      "period": "Juli 2024 - Desember 2024",
+      "type": "Panitia",
+      "description": "??"
+    },
+    {
+      "role": "Anggota Acara dan PJ Moderator",
+      "company": "Sensation 2024 Digital Innovation JTIK-PNUP",
+      "period": "Juli 2024 - Desember 2024",
+      "type": "Panitia",
+      "description": "??"
     }
   ]
 }
