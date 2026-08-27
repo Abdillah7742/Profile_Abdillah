@@ -13,15 +13,30 @@ document.addEventListener('DOMContentLoaded', () => {
         htmlEl.classList.remove('dark');
     }
 
+    function updatePlaceholderImages(isDark) {
+        const placeholderImages = document.querySelectorAll('img[src*="placehold.co"]');
+        placeholderImages.forEach(img => {
+            let src = img.src;
+            if (isDark) {
+                src = src.replace('/f3f4f6/1e293b', '/0f172a/ffffff');
+            } else {
+                src = src.replace('/0f172a/ffffff', '/f3f4f6/1e293b');
+            }
+            img.src = src;
+        });
+    }
+
     themeToggleBtn.addEventListener('click', () => {
         if (htmlEl.classList.contains('dark')) {
             htmlEl.classList.remove('dark');
             htmlEl.classList.add('light');
             localStorage.theme = 'light';
+            updatePlaceholderImages(false);
         } else {
             htmlEl.classList.remove('light');
             htmlEl.classList.add('dark');
             localStorage.theme = 'dark';
+            updatePlaceholderImages(true);
         }
     });
 
@@ -36,11 +51,14 @@ document.addEventListener('DOMContentLoaded', () => {
         .then(data => {
             populateProfile(data.profile);
             populateSkills(data.skills);
+            window.allProjects = data.pbl_projects; // Store globally for modal access
             populateProjects(data.pbl_projects);
             populateEducation(data.education);
             populateCertificates(data.certificates);
             populateExperience(data.experience);
             populateSocials(data.social_media);
+
+            initModal(); // Initialize modal events
 
             // Execute Scroll Reveal after DOM is populated
             setTimeout(() => {
@@ -149,20 +167,131 @@ function populateProjects(projects) {
     if (!container) return;
     container.innerHTML = '';
 
-    projects.forEach(project => {
-        const matkulHTML = project.matkul ? `<div class="mb-4 text-xs font-bold text-gray-500 uppercase tracking-widest">Mata Kuliah: <span class="text-primary-600">${project.matkul}</span></div>` : '';
-
+    projects.forEach((project, index) => {
         container.innerHTML += `
-            <a href="${project.link}" target="_blank" class="flex flex-col h-full group bg-white dark:bg-dark-card border border-black/10 dark:border-white/10 p-8 md:p-10 hover:shadow-2xl hover:-translate-y-2 transition-all block reveal">
-                <div class="flex items-center gap-3 mb-4">
-                    <span class="w-2 h-2 bg-primary-600 rounded-full"></span>
-                    <span class="text-[10px] md:text-xs font-bold tracking-widest uppercase text-gray-400">${project.year}</span>
+            <div onclick="openProjectModal(${index})" class="cursor-pointer relative group aspect-[16/9] rounded-[2rem] overflow-hidden shadow-md hover:shadow-2xl transition-all duration-500 reveal">
+                <!-- Background Image -->
+                <img src="${project.image}" alt="${project.title}" onerror="this.src = document.documentElement.classList.contains('dark') ? 'https://placehold.co/640x360/0f172a/ffffff?text=${encodeURIComponent(project.title)}' : 'https://placehold.co/640x360/f3f4f6/1e293b?text=${encodeURIComponent(project.title)}'" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+                
+                <!-- Floating Info Panel Overlay -->
+                <div class="absolute bottom-4 left-4 right-4 bg-white/90 dark:bg-[#0f172a]/95 backdrop-blur-md p-5 rounded-2xl flex items-center justify-between border border-white/20 dark:border-white/5 shadow-lg transform translate-y-1 group-hover:translate-y-0 transition-transform duration-500">
+                    <div class="flex flex-col pr-4">
+                        <h3 class="text-base md:text-lg font-black text-slate-900 dark:text-white leading-tight tracking-tight">
+                            ${project.title}
+                        </h3>
+                        <span class="text-[10px] md:text-xs font-bold text-slate-500 dark:text-slate-400 mt-1 uppercase tracking-wider">
+                            ${project.category || 'WEB DEVELOPMENT'}
+                        </span>
+                    </div>
+                    
+                    <!-- Round Arrow Button -->
+                    <div class="w-10 h-10 md:w-11 md:h-11 rounded-full bg-white dark:bg-slate-800 shadow-md flex items-center justify-center text-slate-900 dark:text-white transition-all duration-300 group-hover:bg-primary-600 group-hover:text-white group-hover:scale-110 flex-shrink-0">
+                        <i class="ph ph-arrow-up-right text-base md:text-lg font-bold"></i>
+                    </div>
                 </div>
-                <h3 class="text-2xl md:text-3xl font-black mb-4 group-hover:text-primary-600 transition-colors tracking-tighter leading-tight">${project.title}</h3>
-                ${matkulHTML}
-                <p class="text-gray-500 text-sm leading-relaxed mt-auto pt-4">${project.description}</p>
-            </a>
+            </div>
         `;
+    });
+}
+
+// ======== PROJECT MODAL LOGIC ========
+window.openProjectModal = function(index) {
+    const project = window.allProjects[index];
+    if (!project) return;
+
+    // Fill elements
+    document.getElementById('modalImage').src = project.image;
+    document.getElementById('modalImage').onerror = function() {
+        const isDark = document.documentElement.classList.contains('dark');
+        this.src = isDark 
+            ? `https://placehold.co/640x360/0f172a/ffffff?text=${encodeURIComponent(project.title)}`
+            : `https://placehold.co/640x360/f3f4f6/1e293b?text=${encodeURIComponent(project.title)}`;
+    };
+    document.getElementById('modalCategory').textContent = project.category || 'WEB DEVELOPMENT';
+    document.getElementById('modalTitle').textContent = project.title;
+    document.getElementById('modalDescription').textContent = project.description;
+
+    // Features
+    const featuresList = document.getElementById('modalFeaturesList');
+    featuresList.innerHTML = '';
+    if (project.features && project.features.length > 0) {
+        document.getElementById('modalFeaturesContainer').style.display = 'flex';
+        project.features.forEach(feat => {
+            featuresList.innerHTML += `
+                <li class="flex items-start gap-2 text-gray-300">
+                    <span class="text-primary-600 font-black mr-1">•</span>
+                    <span>${feat}</span>
+                </li>
+            `;
+        });
+    } else {
+        document.getElementById('modalFeaturesContainer').style.display = 'none';
+    }
+
+    // Tech tags
+    const techContainer = document.getElementById('modalTechContainer');
+    techContainer.innerHTML = '';
+    if (project.technologies && project.technologies.length > 0) {
+        project.technologies.forEach(tech => {
+            techContainer.innerHTML += `
+                <span class="text-xs font-bold text-gray-300 bg-slate-800/80 border border-white/5 px-3 py-1.5 rounded-lg">
+                    ${tech}
+                </span>
+            `;
+        });
+    }
+
+    // Demo Link
+    const demoLink = document.getElementById('modalDemoLink');
+    if (project.link && project.link !== '#') {
+        demoLink.href = project.link;
+        demoLink.style.display = 'flex';
+    } else {
+        demoLink.style.display = 'none';
+    }
+
+    // Show modal with animation
+    const modal = document.getElementById('projectModal');
+    const content = document.getElementById('modalContent');
+    
+    modal.classList.remove('pointer-events-none', 'opacity-0');
+    modal.classList.add('opacity-100');
+    content.classList.remove('scale-95', 'opacity-0');
+    content.classList.add('scale-100', 'opacity-100');
+    
+    // Prevent body scroll
+    document.body.style.overflow = 'hidden';
+};
+
+window.closeProjectModal = function() {
+    const modal = document.getElementById('projectModal');
+    const content = document.getElementById('modalContent');
+    
+    modal.classList.remove('opacity-100');
+    modal.classList.add('pointer-events-none', 'opacity-0');
+    content.classList.remove('scale-100', 'opacity-100');
+    content.classList.add('scale-95', 'opacity-0');
+    
+    // Restore body scroll
+    document.body.style.overflow = '';
+};
+
+function initModal() {
+    const closeModalBtn = document.getElementById('closeModalBtn');
+    const backdrop = document.getElementById('modalBackdrop');
+    
+    if (closeModalBtn) {
+        closeModalBtn.addEventListener('click', window.closeProjectModal);
+    }
+    if (backdrop) {
+        backdrop.addEventListener('click', window.closeProjectModal);
+    }
+    
+    // Close on Escape key
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') {
+            window.closeProjectModal();
+        }
     });
 }
 

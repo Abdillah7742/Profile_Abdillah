@@ -28,11 +28,49 @@
   ],
   "pbl_projects": [
     {
-      "title": "Judul",
-      "year": "Tahun Ajaran",
-      "matkul": "Matkul",
-      "description": "Deskripsi",
-      "link": "#"
+      "title": "Pandai",
+      "category": "WEB DEVELOPMENT",
+      "description": "Aplikasi web pembelajaran interaktif digital untuk mendukung peningkatan literasi dan keterampilan secara mandiri.",
+      "image": "./assets/project-pandai.png",
+      "link": "https://github.com/Abdillah7742/Pandai",
+      "technologies": ["HTML5", "CSS3", "JavaScript", "Tailwind CSS"],
+      "features": ["Interactive quizzes", "Progress tracking", "Digital library", "Clean responsive UI"]
+    },
+    {
+      "title": "HIMATIK Website",
+      "category": "WEB DEVELOPMENT",
+      "description": "Website resmi Himpunan Mahasiswa Teknik Komputer dan Jaringan PNUP sebagai pusat informasi kegiatan, berita, dan profil pengurus.",
+      "image": "./assets/project-himatik.png",
+      "link": "https://himatikpnup.my.id/",
+      "technologies": ["Laravel", "Tailwind CSS", "MySQL", "Alpine.js"],
+      "features": ["News management", "Organization profile", "Yearbook documentation", "Admin Dashboard"]
+    },
+    {
+      "title": "KMIPN 2026 Portal",
+      "category": "WEB DEVELOPMENT",
+      "description": "Platform pendaftaran dan pusat informasi resmi kontingen untuk ajang kompetisi bergengsi mahasiswa informatika politeknik se-Indonesia.",
+      "image": "./assets/project-kmipn.png",
+      "link": "https://github.com/Abdillah7742/kmipn-2026",
+      "technologies": ["Laravel", "Tailwind CSS", "Vite", "MySQL"],
+      "features": ["Participant registration", "Information center", "Event scheduling", "Submission portal"]
+    },
+    {
+      "title": "SIASET PNUP",
+      "category": "WEB DEVELOPMENT",
+      "description": "Sistem Informasi Aset Politeknik Negeri Ujung Pandang untuk manajemen inventarisasi, pemantauan, dan pelaporan aset secara real-time.",
+      "image": "./assets/project-siaset.png",
+      "link": "https://github.com/Abdillah7742/SIASETPNUP",
+      "technologies": ["Laravel", "Tailwind CSS", "MySQL", "Livewire"],
+      "features": ["Asset tracking", "Report generation", "Maintenance logging", "Role-based authorization"]
+    },
+    {
+      "title": "SIPANDI (Smart Agriculture IoT)",
+      "category": "IoT & WEB DEVELOPMENT",
+      "description": "Platform IoT pertanian modern berbasis ESP32 dan Flask untuk pemantauan sawah real-time serta otomatisasi pengusiran hama burung pipit.",
+      "image": "./assets/project-sipandi.png",
+      "link": "https://sipandi.techmaestro23.my.id/",
+      "technologies": ["Flask", "Python", "Firebase", "Tailwind CSS", "ESP32", "C++"],
+      "features": ["Real-time sensor monitoring", "Smart radar servo control", "Automatic bird-repellent servo", "PDF report export", "QR Code provisioning"]
     }
   ],
   "education": [
