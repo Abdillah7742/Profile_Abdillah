@@ -24,6 +24,25 @@ document.addEventListener('DOMContentLoaded', () => {
             }
             img.src = src;
         });
+
+        // Update modal logo dynamically if active
+        const modalLogo = document.getElementById('modalLogo');
+        if (modalLogo && window.currentModalLogos) {
+            const activeLogo = isDark ? window.currentModalLogos.dark : window.currentModalLogos.light;
+            if (activeLogo) {
+                modalLogo.src = activeLogo;
+                modalLogo.classList.remove('hidden');
+                if (isDark) {
+                    modalLogo.classList.remove('bg-black/5', 'border-black/5');
+                    modalLogo.classList.add('bg-white/5', 'border-white/10');
+                } else {
+                    modalLogo.classList.remove('bg-white/5', 'border-white/10');
+                    modalLogo.classList.add('bg-black/5', 'border-black/5');
+                }
+            } else {
+                modalLogo.classList.add('hidden');
+            }
+        }
     }
 
     themeToggleBtn.addEventListener('click', () => {
@@ -226,6 +245,30 @@ window.openProjectModal = function(index) {
     document.getElementById('modalCategory').textContent = project.category || 'WEB DEVELOPMENT';
     document.getElementById('modalTitle').textContent = project.title;
     document.getElementById('modalDescription').textContent = project.description;
+
+    // Store logos globally for theme-switch detection
+    window.currentModalLogos = {
+        light: project.logo_light,
+        dark: project.logo_dark
+    };
+
+    // Set modal logo
+    const isDark = document.documentElement.classList.contains('dark');
+    const activeLogo = isDark ? project.logo_dark : project.logo_light;
+    const modalLogo = document.getElementById('modalLogo');
+    if (activeLogo) {
+        modalLogo.src = activeLogo;
+        modalLogo.classList.remove('hidden');
+        if (isDark) {
+            modalLogo.classList.remove('bg-black/5', 'border-black/5');
+            modalLogo.classList.add('bg-white/5', 'border-white/10');
+        } else {
+            modalLogo.classList.remove('bg-white/5', 'border-white/10');
+            modalLogo.classList.add('bg-black/5', 'border-black/5');
+        }
+    } else {
+        modalLogo.classList.add('hidden');
+    }
 
     // Features
     const featuresList = document.getElementById('modalFeaturesList');
