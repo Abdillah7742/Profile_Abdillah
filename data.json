@@ -32,8 +32,10 @@
       "title": "PANDAI",
       "category": "AI & WEB DEVELOPMENT",
       "description": "Platform digital berbasis web untuk mengoptimalkan pengumpulan dan seleksi proposal Program Kreativitas Mahasiswa (PKM) menggunakan otomatisasi analisis sistematika penulisan.",
-      "image": "./assets/project-pandai.png",
+      "image": "./assets/project-pandai.svg",
       "link": "https://pandai.techmaestro23.my.id",
+      "logo_light": "./assets/logo-pandai-light.png",
+      "logo_dark": "./assets/logo-pandai-dark.png",
       "technologies": ["Flask (Python)", "Scikit-Learn (AI)", "MySQL", "python-docx", "JavaScript"],
       "features": ["Validasi Sistematika Format Otomatis", "Prediksi Kategori PKM berbasis AI", "Unggah Proposal & Ekstraksi Teks", "Dashboard Admin & Reviewer", "Role Management (User, Reviewer, Admin)"]
     },
