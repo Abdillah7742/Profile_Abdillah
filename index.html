@@ -411,37 +411,37 @@
         <div id="modalBackdrop" class="absolute inset-0 bg-black/80 backdrop-blur-md"></div>
         
         <!-- Modal Content Box -->
-        <div id="modalContent" class="relative w-full max-w-5xl bg-[#0b0f19]/95 backdrop-blur-xl text-white rounded-[2.5rem] overflow-hidden border border-white/10 shadow-[0_25px_60px_-15px_rgba(0,0,0,0.7)] scale-95 opacity-0 transition-all duration-300 max-h-[90vh] overflow-y-auto no-scrollbar">
+        <div id="modalContent" class="relative w-full max-w-5xl bg-white dark:bg-[#0b0f19]/95 backdrop-blur-xl text-slate-800 dark:text-white rounded-[2.5rem] overflow-hidden border border-black/10 dark:border-white/10 shadow-[0_25px_60px_-15px_rgba(0,0,0,0.3)] dark:shadow-[0_25px_60px_-15px_rgba(0,0,0,0.7)] scale-95 opacity-0 transition-all duration-300 max-h-[90vh] overflow-y-auto no-scrollbar">
             <!-- Close Button -->
-            <button id="closeModalBtn" class="absolute top-6 right-6 z-30 w-11 h-11 bg-white/10 hover:bg-white/20 hover:scale-105 active:scale-95 text-white rounded-full flex items-center justify-center transition-all border border-white/10 backdrop-blur-md">
+            <button id="closeModalBtn" class="absolute top-6 right-6 z-30 w-11 h-11 bg-black/5 hover:bg-black/10 dark:bg-white/10 dark:hover:bg-white/20 hover:scale-105 active:scale-95 text-slate-800 dark:text-white rounded-full flex items-center justify-center transition-all border border-black/10 dark:border-white/10 backdrop-blur-md">
                 <i class="ph ph-x text-xl font-bold"></i>
             </button>
             
             <div class="flex flex-col md:flex-row min-h-[500px]">
                 <!-- Left: Immersive Media Column -->
-                <div class="w-full md:w-[45%] relative min-h-[300px] md:min-h-auto bg-slate-950 overflow-hidden flex flex-col justify-between p-8 border-b md:border-b-0 md:border-r border-white/5">
+                <div class="w-full md:w-[45%] relative min-h-[300px] md:min-h-auto bg-gray-50 dark:bg-slate-950 overflow-hidden flex flex-col justify-between p-8 border-b md:border-b-0 md:border-r border-black/5 dark:border-white/5">
                     <!-- Glow effect in background -->
-                    <div class="absolute -top-24 -left-24 w-72 h-72 bg-primary-600/20 rounded-full blur-3xl"></div>
-                    <div class="absolute -bottom-24 -right-24 w-72 h-72 bg-indigo-600/15 rounded-full blur-3xl"></div>
+                    <div class="absolute -top-24 -left-24 w-72 h-72 bg-primary-600/10 dark:bg-primary-600/20 rounded-full blur-3xl"></div>
+                    <div class="absolute -bottom-24 -right-24 w-72 h-72 bg-indigo-600/10 dark:bg-indigo-600/15 rounded-full blur-3xl"></div>
                     
                     <!-- Category Badge -->
                     <div class="relative z-10 self-start">
-                        <span id="modalCategory" class="bg-primary-600/20 text-primary-400 border border-primary-500/30 text-[10px] font-extrabold tracking-widest uppercase px-4 py-2 rounded-full backdrop-blur-md">
+                        <span id="modalCategory" class="bg-primary-50 dark:bg-primary-600/20 text-primary-600 dark:text-primary-400 border border-primary-100 dark:border-primary-500/30 text-[10px] font-extrabold tracking-widest uppercase px-4 py-2 rounded-full backdrop-blur-md">
                             WEB DEVELOPMENT
                         </span>
                     </div>
 
                     <!-- Mockup Image with Hover Zoom -->
                     <div class="relative z-10 my-auto flex items-center justify-center p-4">
-                        <div class="w-full aspect-[16/10] rounded-2xl overflow-hidden shadow-2xl border border-white/10 transition-transform duration-500 hover:scale-[1.02]">
+                        <div class="w-full aspect-[16/10] rounded-2xl overflow-hidden shadow-2xl border border-black/5 dark:border-white/10 transition-transform duration-500 hover:scale-[1.02]">
                             <img id="modalImage" src="" alt="" class="w-full h-full object-cover">
                         </div>
                     </div>
 
                     <!-- Bottom Showcase Info -->
-                    <div class="relative z-10 mt-auto pt-6 border-t border-white/5 flex items-center justify-between">
-                        <span class="text-[10px] font-bold text-gray-500 uppercase tracking-widest">Project Showcase</span>
-                        <div class="flex gap-2 text-primary-400">
+                    <div class="relative z-10 mt-auto pt-6 border-t border-black/5 dark:border-white/5 flex items-center justify-between">
+                        <span class="text-[10px] font-bold text-gray-400 dark:text-gray-500 uppercase tracking-widest">Project Showcase</span>
+                        <div class="flex gap-2 text-primary-600 dark:text-primary-400">
                             <i class="ph ph-cpu text-lg"></i>
                             <i class="ph ph-database text-lg"></i>
                             <i class="ph ph-globe-hemisphere-east text-lg"></i>
@@ -450,30 +450,30 @@
                 </div>
 
                 <!-- Right: Rich Information Column -->
-                <div class="w-full md:w-[55%] p-8 md:p-12 flex flex-col justify-between gap-8 bg-gradient-to-br from-[#0f172a]/40 to-[#0b0f19]/80">
+                <div class="w-full md:w-[55%] p-8 md:p-12 flex flex-col justify-between gap-8 bg-white dark:bg-gradient-to-br dark:from-[#0f172a] dark:to-[#0b0f19] border-t md:border-t-0 md:border-l border-black/5 dark:border-white/5">
                     <div class="flex flex-col gap-6">
                         <!-- Title & Logo Container -->
                         <div class="flex items-center gap-4">
-                            <img id="modalLogo" class="w-14 h-14 rounded-2xl object-contain bg-white/5 p-2 border border-white/10 hidden" src="" alt="Logo">
-                            <h2 id="modalTitle" class="text-3xl md:text-4xl font-black tracking-tight text-white leading-tight bg-clip-text bg-gradient-to-r from-white via-slate-100 to-slate-400">
+                            <img id="modalLogo" class="w-14 h-14 rounded-2xl object-contain bg-black/5 p-2 border border-black/5 hidden" src="" alt="Logo">
+                            <h2 id="modalTitle" class="text-3xl md:text-4xl font-black tracking-tight text-slate-900 dark:text-white leading-tight">
                                 Project Title
                             </h2>
                         </div>
                         
                         <!-- Description -->
-                        <p id="modalDescription" class="text-gray-400 text-sm md:text-base leading-relaxed font-medium">
+                        <p id="modalDescription" class="text-gray-600 dark:text-gray-400 text-sm md:text-base leading-relaxed font-medium">
                             Project Description
                         </p>
                         
-                        <div class="h-[1px] w-full bg-white/5 my-2"></div>
+                        <div class="h-[1px] w-full bg-black/5 dark:bg-white/5 my-2"></div>
                         
                         <!-- Features -->
                         <div id="modalFeaturesContainer" class="flex flex-col gap-4">
-                            <h4 class="text-xs font-bold uppercase tracking-wider text-primary-500 flex items-center gap-2">
+                            <h4 class="text-xs font-bold uppercase tracking-wider text-primary-600 dark:text-primary-505 flex items-center gap-2">
                                 <span class="w-2 h-2 bg-primary-600 rounded-full animate-pulse"></span>
                                 Fitur Utama
                             </h4>
-                            <ul id="modalFeaturesList" class="grid grid-cols-1 gap-3 text-sm text-gray-300">
+                            <ul id="modalFeaturesList" class="grid grid-cols-1 gap-3 text-sm text-gray-600 dark:text-gray-300">
                                 <!-- Populated dynamically -->
                             </ul>
                         </div>

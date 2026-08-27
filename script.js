@@ -277,7 +277,7 @@ window.openProjectModal = function(index) {
         document.getElementById('modalFeaturesContainer').style.display = 'flex';
         project.features.forEach(feat => {
             featuresList.innerHTML += `
-                <li class="flex items-start gap-2 text-gray-300">
+                <li class="flex items-start gap-2 text-slate-600 dark:text-gray-300">
                     <span class="text-primary-600 font-black mr-1">•</span>
                     <span>${feat}</span>
                 </li>
@@ -293,7 +293,7 @@ window.openProjectModal = function(index) {
     if (project.technologies && project.technologies.length > 0) {
         project.technologies.forEach(tech => {
             techContainer.innerHTML += `
-                <span class="text-xs font-bold text-gray-300 bg-slate-800/80 border border-white/5 px-3 py-1.5 rounded-lg">
+                <span class="text-xs font-bold text-slate-700 dark:text-gray-300 bg-slate-100 dark:bg-slate-800/80 border border-black/5 dark:border-white/5 px-3 py-1.5 rounded-lg">
                     ${tech}
                 </span>
             `;
