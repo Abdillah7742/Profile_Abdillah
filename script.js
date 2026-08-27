@@ -60,6 +60,16 @@ document.addEventListener('DOMContentLoaded', () => {
 
             initModal(); // Initialize modal events
 
+            // Populate dynamic stats counts
+            if (data.pbl_projects) {
+                const statProjects = document.getElementById('statProjects');
+                if (statProjects) statProjects.textContent = `${data.pbl_projects.length}+`;
+            }
+            if (data.certificates) {
+                const statCertificates = document.getElementById('statCertificates');
+                if (statCertificates) statCertificates.textContent = `${data.certificates.length}+`;
+            }
+
             // Execute Scroll Reveal after DOM is populated
             setTimeout(() => {
                 initScrollReveal();
@@ -119,6 +129,12 @@ function populateProfile(profile) {
 
     const aboutEl = document.getElementById('aboutText');
     if (aboutEl) aboutEl.textContent = profile.about;
+
+    // Dynamic stats
+    const statSemester = document.getElementById('statSemester');
+    if (statSemester && profile.semester) {
+        statSemester.textContent = profile.semester;
+    }
 
     // Footer Bindings
     const footerName = document.getElementById('footerName');

@@ -4,6 +4,7 @@
     "jurusan": "TEKNIK KOMPUTER DAN JARINGAN",
     "name": "Muhammad Abdillah Ahmad",
     "status": "Mahasiswa Semester 7",
+    "semester": 7,
     "department": "Teknik Informatika dan Komputer",
     "program": "Teknik Komputer dan Jaringan",
     "about": "Halo! Saya Muhammad Abdillah Ahmad, mahasiswa semester 7 Teknik Komputer dan Jaringan di Politeknik Negeri Ujung Pandang yang berdedikasi dalam menjembatani fungsionalitas sistem dengan infrastruktur IT yang tangguh. Sebagai pengembang web, saya memiliki pengalaman dalam menggunakan framework Laravel dan Flask, serta saat ini tengah memperluas kapabilitas front-end menggunakan React JS. Tidak hanya fokus pada perangkat lunak, saya juga aktif mendalami manajemen server dan jaringan melalui pengelolaan homelab mandiri serta konfigurasi perangkat Mikrotik. Berbekal pengalaman sebagai desainer di berbagai kepanitiaan dan organisasi, saya mampu bekerja secara kolaboratif dalam tim untuk menghasilkan solusi teknis yang efisien dan terstruktur.",
