@@ -403,20 +403,61 @@ function populateEducation(eduList) {
     if (!eduList) return;
     const container = document.getElementById('educationContainer');
     if (!container) return;
-    container.innerHTML = '';
+    
+    // Build vertical timeline (Chronological: oldest at the top to newest at the bottom)
+    let html = `
+        <div class="relative w-full max-w-[105rem] mx-auto py-10 px-4 md:px-8">
+            <!-- Central Vertical Line -->
+            <div class="absolute left-6 md:left-1/2 transform -translate-x-1/2 top-0 bottom-0 w-0.5 bg-gray-200 dark:bg-slate-800"></div>
+            
+            <div class="relative flex flex-col gap-12 md:gap-8 w-full">
+    `;
 
-    eduList.forEach(edu => {
-        container.innerHTML += `
-            <div class="group reveal h-full">
-                <div class="flex flex-col h-full border-l-2 border-black/5 dark:border-white/5 pl-6 hover:border-primary-600 transition-colors duration-300">
-                    <div class="text-[10px] font-bold text-gray-400 uppercase tracking-widest mb-2">${edu.year}</div>
-                    <h4 class="text-xl font-bold tracking-tight mb-2 group-hover:text-primary-600 transition-colors">${edu.institution}</h4>
-                    <div class="text-primary-600 font-bold uppercase tracking-wider text-[10px] mb-3">${edu.degree}</div>
-                    <p class="text-gray-500 text-sm leading-relaxed">${edu.description}</p>
+    eduList.forEach((edu, index) => {
+        const isLeft = index % 2 === 0;
+        // Extract start year for the node circle
+        const startYear = edu.year.split(' ')[0] || edu.year;
+
+        html += `
+            <div class="relative w-full reveal">
+                <!-- Central Year Circle Node Badge -->
+                <div class="absolute left-6 md:left-1/2 transform -translate-x-1/2 z-20 flex items-center justify-center top-6 md:top-1/2 md:-translate-y-1/2">
+                    <div class="w-12 h-12 rounded-full bg-white dark:bg-[#0b0f19] border-2 border-primary-600 shadow-md flex items-center justify-center transition-transform duration-300 hover:scale-110">
+                        <span class="text-xs font-black text-slate-800 dark:text-white">${startYear}</span>
+                    </div>
+                </div>
+                
+                <!-- Grid Container (2 columns on desktop) -->
+                <div class="grid grid-cols-1 md:grid-cols-2 w-full gap-8 md:gap-12">
+                    <!-- Left Column -->
+                    <div class="${isLeft ? 'pl-16 md:pl-0 md:pr-8 text-left md:text-right' : 'hidden md:block md:opacity-0 md:pointer-events-none'}">
+                        <div class="bg-white dark:bg-[#0b0f19] p-8 rounded-3xl border border-black/5 dark:border-white/10 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 inline-block w-full text-left">
+                            <span class="text-[10px] font-bold text-primary-600 uppercase tracking-widest block mb-2">${edu.year}</span>
+                            <h4 class="text-xl font-bold tracking-tight text-slate-900 dark:text-white mb-1">${edu.institution}</h4>
+                            <div class="text-[10px] font-bold text-gray-400 dark:text-gray-500 uppercase tracking-widest mb-3">${edu.degree}</div>
+                            <p class="text-gray-500 dark:text-gray-400 text-sm leading-relaxed">${edu.description}</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Right Column -->
+                    <div class="${!isLeft ? 'pl-16 md:pl-8 text-left' : 'hidden md:block md:opacity-0 md:pointer-events-none'}">
+                        <div class="bg-white dark:bg-[#0b0f19] p-8 rounded-3xl border border-black/5 dark:border-white/10 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 inline-block w-full">
+                            <span class="text-[10px] font-bold text-primary-600 uppercase tracking-widest block mb-2">${edu.year}</span>
+                            <h4 class="text-xl font-bold tracking-tight text-slate-900 dark:text-white mb-1">${edu.institution}</h4>
+                            <div class="text-[10px] font-bold text-gray-400 dark:text-gray-500 uppercase tracking-widest mb-3">${edu.degree}</div>
+                            <p class="text-gray-500 dark:text-gray-400 text-sm leading-relaxed">${edu.description}</p>
+                        </div>
+                    </div>
                 </div>
             </div>
         `;
     });
+
+    html += `
+            </div>
+        </div>
+    `;
+    container.innerHTML = html;
 }
 
 // Populate Certificates (Image Card Style)
