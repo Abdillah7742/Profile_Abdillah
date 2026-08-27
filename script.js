@@ -24,6 +24,18 @@ document.addEventListener('DOMContentLoaded', () => {
             }
             img.src = src;
         });
+
+        // Update skill logos dynamically
+        const skillLogos = document.querySelectorAll('img.skill-logo');
+        skillLogos.forEach(img => {
+            const lightSrc = img.getAttribute('data-light');
+            const darkSrc = img.getAttribute('data-dark');
+            if (isDark && darkSrc) {
+                img.src = darkSrc;
+            } else if (!isDark && lightSrc) {
+                img.src = lightSrc;
+            }
+        });
     }
 
     themeToggleBtn.addEventListener('click', () => {
@@ -157,19 +169,50 @@ function populateSkills(skills) {
     if (!container) return;
     container.innerHTML = '';
 
-    skills.forEach((skill, index) => {
-        container.innerHTML += `
-            <div class="reveal group w-full sm:w-[calc(50%-1rem)] lg:w-[calc(33.333%-2rem)] xl:w-[calc(25%-2rem)] max-w-sm">
-                <div class="bg-white dark:bg-dark-card p-8 md:p-10 h-full rounded-[40px] flex flex-col items-center text-center transition-all duration-500 hover:shadow-2xl hover:shadow-primary-600/10 hover:-translate-y-4 border border-black/5 dark:border-white/5">
-                    <!-- Icon with Primary Blue accent -->
-                    <div class="relative mb-6 flex items-center justify-center">
-                        <div class="absolute w-12 h-12 bg-primary-600/10 rounded-full blur-xl group-hover:bg-primary-600/20 transition-colors"></div>
-                        <i class="ph ${skill.icon} text-5xl text-primary-600 relative z-10 group-hover:scale-110 transition-transform duration-500"></i>
+    skills.forEach((skill) => {
+        // Generate logo items list
+        let itemsHtml = '';
+        if (skill.items && skill.items.length > 0) {
+            const isDark = document.documentElement.classList.contains('dark');
+            skill.items.forEach(item => {
+                const lightLogo = item.logo_light || item.logo;
+                const darkLogo = item.logo_dark || item.logo;
+                const activeSrc = isDark ? darkLogo : lightLogo;
+
+                itemsHtml += `
+                    <div class="group/item flex flex-col items-center gap-1.5">
+                        <div class="w-14 h-14 bg-white dark:bg-slate-900 border border-black/5 dark:border-white/10 p-3 rounded-2xl shadow-sm hover:shadow-md hover:scale-110 active:scale-95 transition-all duration-300 flex items-center justify-center relative">
+                            <img src="${activeSrc}" data-light="${lightLogo}" data-dark="${darkLogo}" alt="${item.name}" class="skill-logo w-8 h-8 object-contain">
+                            <!-- Tooltip -->
+                            <span class="absolute -top-10 bg-slate-950 text-white text-[9px] font-bold px-2 py-1 rounded-md opacity-0 pointer-events-none group-hover/item:opacity-100 transition-opacity duration-300 whitespace-nowrap z-30 shadow-md">
+                                ${item.name}
+                            </span>
+                        </div>
                     </div>
-                    
-                    <h3 class="text-black dark:text-white font-sans font-black text-lg md:text-xl uppercase tracking-tighter group-hover:text-primary-600 transition-colors leading-tight">
+                `;
+            });
+        }
+
+        container.innerHTML += `
+            <div class="reveal group w-full sm:w-[calc(50%-1.5rem)] xl:w-[calc(25%-1.5rem)] max-w-sm">
+                <div class="bg-white dark:bg-[#0b0f19] p-8 md:p-10 h-full rounded-[2.5rem] flex flex-col items-center text-center transition-all duration-500 hover:shadow-2xl hover:shadow-primary-600/5 hover:-translate-y-2 border border-black/5 dark:border-white/5 relative overflow-hidden">
+                    <!-- Subtle gradient overlay on hover -->
+                    <div class="absolute inset-0 bg-gradient-to-br from-primary-600/0 to-primary-600/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"></div>
+
+                    <!-- Category Icon Container -->
+                    <div class="w-20 h-20 bg-slate-50 dark:bg-slate-900/60 border border-black/5 dark:border-white/10 rounded-2xl flex items-center justify-center mb-6 shadow-inner relative z-10 transition-transform duration-500 group-hover:scale-105">
+                        <i class="ph ${skill.icon} text-4xl text-primary-600"></i>
+                    </div>
+
+                    <!-- Title -->
+                    <h3 class="text-slate-900 dark:text-white font-sans font-black text-lg md:text-xl tracking-tight mb-6 relative z-10">
                         ${skill.name}
                     </h3>
+
+                    <!-- Logos Row -->
+                    <div class="flex flex-wrap items-center justify-center gap-3 mt-auto relative z-10 w-full">
+                        ${itemsHtml}
+                    </div>
                 </div>
             </div>
         `;

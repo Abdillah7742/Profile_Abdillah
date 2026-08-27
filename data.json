@@ -119,14 +119,45 @@
   ],
   "skills": [
     {
-      "name": "Junior Network Administrator",
-      "description": "Certified in managing and securing complex network infrastructures and active directory.",
-      "icon": "ph-globe-stand"
+      "name": "Infrastructure Engineer",
+      "icon": "ph-tree-structure",
+      "items": [
+        { "name": "Proxmox VE", "logo_light": "https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/webp/proxmox-light.webp", "logo_dark": "https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/webp/proxmox.webp" },
+        { "name": "Docker", "logo": "https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/webp/docker-moby.webp" },
+        { "name": "CasaOS", "logo": "https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/webp/casaos.webp" },
+        { "name": "AdGuard Home", "logo": "https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/webp/adguard-home.webp" },
+        { "name": "Mikrotik", "logo_light": "https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/webp/mikrotik.webp", "logo_dark": "https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/webp/mikrotik-light.webp" }
+      ]
     },
     {
-      "name": "Web Development",
-      "description": "Building robust back-end systems using modern frameworks like Laravel and Flask.",
-      "icon": "ph-code"
+      "name": "Software Development",
+      "icon": "ph-code",
+      "items": [
+        { "name": "React JS", "logo_light": "https://cdn.simpleicons.org/react/000000", "logo_dark": "https://cdn.simpleicons.org/react/61DAFB" },
+        { "name": "Tailwind CSS", "logo": "https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/webp/tailwind.webp" },
+        { "name": "Laravel", "logo": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/laravel/laravel-original.svg" },
+        { "name": "Flask", "logo_light": "https://cdn.simpleicons.org/flask/000000", "logo_dark": "https://cdn.simpleicons.org/flask/FFFFFF" },
+        { "name": "Android Studio", "logo_light": "https://cdn.simpleicons.org/androidstudio/000000", "logo_dark": "https://cdn.simpleicons.org/androidstudio/FFFFFF" },
+        { "name": "Kotlin", "logo": "https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/webp/kotlin.webp" }
+      ]
+    },
+    {
+      "name": "AI & Databases",
+      "icon": "ph-brain",
+      "items": [
+        { "name": "Google Colab", "logo": "https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/webp/google-colab.webp" },
+        { "name": "Python", "logo": "https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/webp/python.webp" },
+        { "name": "MySQL", "logo_light": "https://cdn.jsdelivr.net/gh/selfhst/icons/webp/mysql-dark.webp", "logo_dark": "https://cdn.jsdelivr.net/gh/selfhst/icons/webp/mysql-light.webp" },
+        { "name": "JavaScript", "logo": "https://cdn.jsdelivr.net/gh/selfhst/icons/svg/javascript.svg" }
+      ]
+    },
+    {
+      "name": "Visual & Creative Design",
+      "icon": "ph-paint-brush-broad",
+      "items": [
+        { "name": "Figma", "logo": "https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/webp/figma.webp" },
+        { "name": "Canva", "logo": "https://uxwing.com/wp-content/themes/uxwing/download/brands-and-social-media/canva-icon.svg" }
+      ]
     }
   ],
   "experience": [
