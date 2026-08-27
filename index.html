@@ -426,15 +426,26 @@
                     
                     <!-- Category Badge -->
                     <div class="relative z-10 self-start">
-                        <span id="modalCategory" class="bg-primary-50 dark:bg-primary-600/20 text-primary-600 dark:text-primary-400 border border-primary-100 dark:border-primary-500/30 text-[10px] font-extrabold tracking-widest uppercase px-4 py-2 rounded-full backdrop-blur-md">
+                        <span id="modalCategory" class="bg-primary-600 text-white border border-primary-500/30 text-[10px] font-extrabold tracking-widest uppercase px-4 py-2 rounded-full shadow-md">
                             WEB DEVELOPMENT
                         </span>
                     </div>
 
                     <!-- Mockup Image with Hover Zoom -->
-                    <div class="relative z-10 my-auto flex items-center justify-center p-4">
-                        <div class="w-full aspect-[16/10] rounded-2xl overflow-hidden shadow-2xl border border-black/5 dark:border-white/10 transition-transform duration-500 hover:scale-[1.02]">
+                    <div class="relative z-10 my-auto flex flex-col items-center justify-center p-4 gap-6">
+                        <div onclick="openImageViewer('modalImage')" class="w-full aspect-[16/10] rounded-2xl overflow-hidden shadow-2xl border border-black/5 dark:border-white/10 transition-transform duration-500 hover:scale-[1.02] cursor-pointer">
                             <img id="modalImage" src="" alt="" class="w-full h-full object-cover">
+                        </div>
+                        <!-- Project Logos (Light & Dark side by side) -->
+                        <div id="modalLogosContainer" class="hidden flex items-center justify-center gap-6">
+                            <div class="flex flex-col items-center gap-2">
+                                <img id="modalLogoLight" onclick="openImageViewer('modalLogoLight')" class="w-36 h-36 rounded-2xl object-contain bg-white p-2 border border-black/10 shadow-lg cursor-pointer hover:scale-105 active:scale-95 transition-all duration-300" src="" alt="Logo Light">
+                                <span class="text-[9px] font-bold text-gray-400 dark:text-gray-500 uppercase tracking-widest">Version Light</span>
+                            </div>
+                            <div class="flex flex-col items-center gap-2">
+                                <img id="modalLogoDark" onclick="openImageViewer('modalLogoDark')" class="w-36 h-36 rounded-2xl object-contain bg-slate-900 p-2 border border-white/10 shadow-lg cursor-pointer hover:scale-105 active:scale-95 transition-all duration-300" src="" alt="Logo Dark">
+                                <span class="text-[9px] font-bold text-gray-400 dark:text-gray-500 uppercase tracking-widest">Version Dark</span>
+                            </div>
                         </div>
                     </div>
 
@@ -454,7 +465,6 @@
                     <div class="flex flex-col gap-6">
                         <!-- Title & Logo Container -->
                         <div class="flex items-center gap-4">
-                            <img id="modalLogo" class="w-14 h-14 rounded-2xl object-contain bg-black/5 p-2 border border-black/5 hidden" src="" alt="Logo">
                             <h2 id="modalTitle" class="text-3xl md:text-4xl font-black tracking-tight text-slate-900 dark:text-white leading-tight">
                                 Project Title
                             </h2>
@@ -497,6 +507,18 @@
                     </div>
                 </div>
             </div>
+        </div>
+    </div>
+
+    <!-- Image Viewer Modal (Lightbox) -->
+    <div id="imageViewerModal" class="fixed inset-0 z-[250] flex items-center justify-center bg-black/95 opacity-0 pointer-events-none transition-all duration-300">
+        <!-- Close Button -->
+        <button onclick="closeImageViewer()" class="absolute top-6 right-6 z-[260] w-12 h-12 bg-white/10 hover:bg-white/20 hover:scale-105 active:scale-95 text-white rounded-full flex items-center justify-center transition-all border border-white/10 backdrop-blur-md">
+            <i class="ph ph-x text-2xl font-bold"></i>
+        </button>
+        <!-- Fullscreen Image Wrapper -->
+        <div class="max-w-[90vw] max-h-[85vh] rounded-2xl overflow-hidden border border-white/10 shadow-2xl">
+            <img id="viewerImage" src="" alt="Zoomed View" class="w-full h-full object-contain max-h-[85vh]">
         </div>
     </div>
 

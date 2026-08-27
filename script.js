@@ -24,25 +24,6 @@ document.addEventListener('DOMContentLoaded', () => {
             }
             img.src = src;
         });
-
-        // Update modal logo dynamically if active
-        const modalLogo = document.getElementById('modalLogo');
-        if (modalLogo && window.currentModalLogos) {
-            const activeLogo = isDark ? window.currentModalLogos.dark : window.currentModalLogos.light;
-            if (activeLogo) {
-                modalLogo.src = activeLogo;
-                modalLogo.classList.remove('hidden');
-                if (isDark) {
-                    modalLogo.classList.remove('bg-black/5', 'border-black/5');
-                    modalLogo.classList.add('bg-white/5', 'border-white/10');
-                } else {
-                    modalLogo.classList.remove('bg-white/5', 'border-white/10');
-                    modalLogo.classList.add('bg-black/5', 'border-black/5');
-                }
-            } else {
-                modalLogo.classList.add('hidden');
-            }
-        }
     }
 
     themeToggleBtn.addEventListener('click', () => {
@@ -246,28 +227,17 @@ window.openProjectModal = function(index) {
     document.getElementById('modalTitle').textContent = project.title;
     document.getElementById('modalDescription').textContent = project.description;
 
-    // Store logos globally for theme-switch detection
-    window.currentModalLogos = {
-        light: project.logo_light,
-        dark: project.logo_dark
-    };
-
-    // Set modal logo
-    const isDark = document.documentElement.classList.contains('dark');
-    const activeLogo = isDark ? project.logo_dark : project.logo_light;
-    const modalLogo = document.getElementById('modalLogo');
-    if (activeLogo) {
-        modalLogo.src = activeLogo;
-        modalLogo.classList.remove('hidden');
-        if (isDark) {
-            modalLogo.classList.remove('bg-black/5', 'border-black/5');
-            modalLogo.classList.add('bg-white/5', 'border-white/10');
-        } else {
-            modalLogo.classList.remove('bg-white/5', 'border-white/10');
-            modalLogo.classList.add('bg-black/5', 'border-black/5');
-        }
+    // Set modal logos (Light and Dark versions side by side)
+    const logosContainer = document.getElementById('modalLogosContainer');
+    const logoLight = document.getElementById('modalLogoLight');
+    const logoDark = document.getElementById('modalLogoDark');
+    
+    if (project.logo_light && project.logo_dark) {
+        logoLight.src = project.logo_light;
+        logoDark.src = project.logo_dark;
+        logosContainer.classList.remove('hidden');
     } else {
-        modalLogo.classList.add('hidden');
+        logosContainer.classList.add('hidden');
     }
 
     // Features
@@ -335,9 +305,27 @@ window.closeProjectModal = function() {
     document.body.style.overflow = '';
 };
 
+// ======== IMAGE VIEWER LIGHTBOX LOGIC ========
+window.openImageViewer = function(elementId) {
+    const targetId = elementId || 'modalImage';
+    const modalImgSrc = document.getElementById(targetId).src;
+    document.getElementById('viewerImage').src = modalImgSrc;
+    
+    const viewer = document.getElementById('imageViewerModal');
+    viewer.classList.remove('pointer-events-none');
+    viewer.classList.add('opacity-100');
+};
+
+window.closeImageViewer = function() {
+    const viewer = document.getElementById('imageViewerModal');
+    viewer.classList.remove('opacity-100');
+    viewer.classList.add('pointer-events-none');
+};
+
 function initModal() {
     const closeModalBtn = document.getElementById('closeModalBtn');
     const backdrop = document.getElementById('modalBackdrop');
+    const viewerBackdrop = document.getElementById('imageViewerModal');
     
     if (closeModalBtn) {
         closeModalBtn.addEventListener('click', window.closeProjectModal);
@@ -345,11 +333,24 @@ function initModal() {
     if (backdrop) {
         backdrop.addEventListener('click', window.closeProjectModal);
     }
+    if (viewerBackdrop) {
+        viewerBackdrop.addEventListener('click', (e) => {
+            // Close lightbox only when clicking the backdrop (outside the image container itself)
+            if (e.target.id === 'imageViewerModal') {
+                window.closeImageViewer();
+            }
+        });
+    }
     
     // Close on Escape key
     document.addEventListener('keydown', (e) => {
         if (e.key === 'Escape') {
-            window.closeProjectModal();
+            const viewer = document.getElementById('imageViewerModal');
+            if (viewer && viewer.classList.contains('opacity-100')) {
+                window.closeImageViewer();
+            } else {
+                window.closeProjectModal();
+            }
         }
     });
 }
