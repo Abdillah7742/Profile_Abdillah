@@ -1,0 +1,9 @@
+services:
+  profile-web:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: profile-abdillah
+    ports:
+      - "3001:80"
+    restart: unless-stopped

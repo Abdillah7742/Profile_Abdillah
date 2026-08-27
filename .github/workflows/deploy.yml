@@ -1,0 +1,18 @@
+name: Deploy Profile to Homelab
+
+on:
+  push:
+    branches: [main]
+
+jobs:
+  deploy:
+    runs-on: self-hosted
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Pull & Rebuild
+        run: |
+          cd /opt/sites/profile-abdillah
+          git pull origin main
+          docker compose up -d --build
