@@ -666,16 +666,16 @@ window.openExperienceModal = function(index) {
         docsGrid.innerHTML = '';
         if (exp.documentation && exp.documentation.length > 0) {
             docsContainer.classList.remove('hidden');
+            // Use CSS columns for a masonry-like grid so images don't get cropped
+            docsGrid.className = "columns-2 sm:columns-3 gap-4 w-full";
+            
             // Limit to max 5
             const docs = exp.documentation.slice(0, 5);
-            // Dynamic/random ratios
-            const ratios = ['aspect-[16/9]', 'aspect-[4/3]', 'aspect-square', 'aspect-[3/2]'];
             
             docs.forEach((imgUrl, i) => {
-                const ratioClass = ratios[i % ratios.length];
                 docsGrid.innerHTML += `
-                    <div onclick="openImageViewer('expDocImg_${i}')" class="group/doc cursor-pointer overflow-hidden rounded-2xl border border-black/10 dark:border-white/10 shadow-sm hover:shadow-md transition-all duration-300 relative ${ratioClass}">
-                        <img id="expDocImg_${i}" src="${imgUrl}" alt="Dokumentasi ${i+1}" class="w-full h-full object-cover group-hover/doc:scale-105 transition-transform duration-500">
+                    <div onclick="openImageViewer('expDocImg_${i}')" class="group/doc cursor-pointer overflow-hidden rounded-2xl border border-black/10 dark:border-white/10 shadow-sm hover:shadow-md transition-all duration-300 relative mb-4 break-inside-avoid bg-slate-50 dark:bg-slate-900">
+                        <img id="expDocImg_${i}" src="${imgUrl}" alt="Dokumentasi ${i+1}" class="w-full h-auto object-contain group-hover/doc:scale-105 transition-transform duration-500 block">
                         <div class="absolute inset-0 bg-black/25 opacity-0 group-hover/doc:opacity-100 transition-opacity duration-300 flex items-center justify-center">
                             <i class="ph ph-magnifying-glass-plus text-white text-xl font-bold"></i>
                         </div>
@@ -684,6 +684,34 @@ window.openExperienceModal = function(index) {
             });
         } else {
             docsContainer.classList.add('hidden');
+        }
+    }
+
+    // Handle documentation links
+    const linksContainer = document.getElementById('expModalLinksContainer');
+    const linksGrid = document.getElementById('expModalLinksGrid');
+    
+    if (linksGrid && linksContainer) {
+        linksGrid.innerHTML = '';
+        if (exp.links && exp.links.length > 0) {
+            linksContainer.classList.remove('hidden');
+            exp.links.forEach(link => {
+                let iconClass = 'ph-link';
+                if (link.url.includes('youtube.com') || link.url.includes('youtu.be')) {
+                    iconClass = 'ph-youtube-logo text-red-500';
+                } else if (link.url.includes('instagram.com')) {
+                    iconClass = 'ph-instagram-logo text-pink-500';
+                }
+                
+                linksGrid.innerHTML += `
+                    <a href="${link.url}" target="_blank" class="flex items-center gap-2 px-4 py-2.5 rounded-xl bg-slate-50 hover:bg-slate-100 dark:bg-slate-900/60 dark:hover:bg-slate-900/90 border border-black/5 dark:border-white/10 text-xs font-bold text-slate-700 dark:text-slate-200 transition-all hover:scale-105 active:scale-95 shadow-sm">
+                        <i class="ph ${iconClass} text-lg"></i>
+                        <span>${link.label}</span>
+                    </a>
+                `;
+            });
+        } else {
+            linksContainer.classList.add('hidden');
         }
     }
 
