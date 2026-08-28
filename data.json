@@ -161,7 +161,8 @@
         { "name": "Laravel", "logo": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/laravel/laravel-original.svg" },
         { "name": "Flask", "logo_light": "https://cdn.simpleicons.org/flask/000000", "logo_dark": "https://cdn.simpleicons.org/flask/FFFFFF" },
         { "name": "Android Studio", "logo_light": "https://cdn.simpleicons.org/androidstudio/000000", "logo_dark": "https://cdn.simpleicons.org/androidstudio/FFFFFF" },
-        { "name": "Kotlin", "logo": "https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/webp/kotlin.webp" }
+        { "name": "Kotlin", "logo": "https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/webp/kotlin.webp" },
+        { "name": "JavaScript", "logo": "https://cdn.jsdelivr.net/gh/selfhst/icons/svg/javascript.svg" }
       ]
     },
     {
@@ -170,8 +171,7 @@
       "items": [
         { "name": "Google Colab", "logo": "https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/webp/google-colab.webp" },
         { "name": "Python", "logo": "https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/webp/python.webp" },
-        { "name": "MySQL", "logo_light": "https://cdn.jsdelivr.net/gh/selfhst/icons/webp/mysql-dark.webp", "logo_dark": "https://cdn.jsdelivr.net/gh/selfhst/icons/webp/mysql-light.webp" },
-        { "name": "JavaScript", "logo": "https://cdn.jsdelivr.net/gh/selfhst/icons/svg/javascript.svg" }
+        { "name": "MySQL", "logo_light": "https://cdn.jsdelivr.net/gh/selfhst/icons/webp/mysql-dark.webp", "logo_dark": "https://cdn.jsdelivr.net/gh/selfhst/icons/webp/mysql-light.webp" }
       ]
     },
     {
