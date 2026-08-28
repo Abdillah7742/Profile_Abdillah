@@ -167,6 +167,24 @@
   ],
   "experience": [
     {
+      "category": "campus",
+      "role": "Sekretaris Departemen Media Kreatif",
+      "company": "HIMATIK PNUP",
+      "period": "2024 - Sekarang",
+      "icon": "https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/webp/figma.webp",
+      "description": "Mengoordinasikan program kerja divisi media kreatif, serta memimpin produksi konten visual, branding digital, dan dokumentasi organisasi.",
+      "documentation": []
+    },
+    {
+      "category": "campus",
+      "role": "Staf Kementerian Komunikasi & Informatika (Kominfo)",
+      "company": "BEM KMPNUP",
+      "period": "2024 - Sekarang",
+      "icon": "https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/webp/slack.webp",
+      "description": "Mengelola saluran informasi kampus, menyusun materi publikasi resmi, dan mendukung komunikasi publik tingkat politeknik.",
+      "documentation": []
+    },
+    {
       "category": "technical",
       "role": "Divisi Website",
       "company": "KMIPN VIII",
@@ -237,29 +255,20 @@
     },
     {
       "category": "campus",
-      "role": "Sekretaris Departemen Media Kreatif",
-      "company": "HIMATIK PNUP",
-      "period": "2024 - Sekarang",
-      "icon": "https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/webp/figma.webp",
-      "description": "Mengoordinasikan program kerja divisi media kreatif, serta memimpin produksi konten visual, branding digital, dan dokumentasi organisasi.",
-      "documentation": []
-    },
-    {
-      "category": "campus",
-      "role": "Staf Kementerian Komunikasi & Informatika (Kominfo)",
-      "company": "BEM KMPNUP",
-      "period": "2024 - Sekarang",
-      "icon": "https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/webp/slack.webp",
-      "description": "Mengelola saluran informasi kampus, menyusun materi publikasi resmi, dan mendukung komunikasi publik tingkat politeknik.",
-      "documentation": []
-    },
-    {
-      "category": "campus",
       "role": "Koordinator Divisi Perlengkapan",
       "company": "LOGIKA HIMATIK PNUP (Kaderisasi Jurusan TIK)",
       "period": "2025",
       "icon": "https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/webp/homeassistant.webp",
       "description": "Memimpin manajemen logistik, pengadaan sarana, dan alur teknis operasional lapangan untuk kegiatan kaderisasi jurusan TIK.",
+      "documentation": []
+    },
+    {
+      "category": "campus",
+      "role": "Anggota Divisi Acara",
+      "company": "D-Verse 2025",
+      "period": "2025",
+      "icon": "https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/webp/google-calendar.webp",
+      "description": "Menyusun susunan acara (rundown), mengoordinasikan pengisi acara/pemateri, serta memastikan kelancaran alur teknis sesi acara.",
       "documentation": []
     },
     {
@@ -278,15 +287,6 @@
       "period": "2024",
       "icon": "https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/webp/google-calendar.webp",
       "description": "Terlibat dalam penyusunan konsep dan rundown acara seminar skala nasional, koordinasi narasumber, serta manajemen alur pelaksanaan acara.",
-      "documentation": []
-    },
-    {
-      "category": "campus",
-      "role": "Anggota Divisi Acara",
-      "company": "D-Verse 2025",
-      "period": "2025",
-      "icon": "https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/webp/google-calendar.webp",
-      "description": "Menyusun susunan acara (rundown), mengoordinasikan pengisi acara/pemateri, serta memastikan kelancaran alur teknis sesi acara.",
       "documentation": []
     },
     {
