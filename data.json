@@ -175,15 +175,33 @@
     },
     {
       "category": "technical",
-      "role": "Operator Livestream & Visual Display",
+      "role": "Operator Livestream & Visual Display (Seminar Nasional Sensation)",
       "company": "Event Skala Nasional & Kampus",
       "period": "2026",
       "icon": "https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/webp/obs.webp",
-      "description": "Bertindak sebagai operator teknis broadcasting (livestream) dan kontrol sistem visual display panggung secara real-time pada berbagai agenda besar seperti Seminar Nasional Sensation, Sosialisasi KMIPN VIII Tahun 2026 PNUP, serta PKKMB PNUP 2026.",
+      "description": "Bertindak sebagai operator teknis broadcasting (livestream) dan kontrol sistem visual display panggung secara real-time pada Seminar Nasional Sensation.",
       "documentation": [
-        "https://placehold.co/800x450/f3f4f6/1e293b?text=Livestream+Setup",
-        "https://placehold.co/600x800/f3f4f6/1e293b?text=Visual+Control"
+        "https://placehold.co/800x450/f3f4f6/1e293b?text=Livestream+Sensation",
+        "https://placehold.co/600x800/f3f4f6/1e293b?text=Visual+Control+Sensation"
       ]
+    },
+    {
+      "category": "technical",
+      "role": "Operator Livestream & Visual Display (Sosialisasi KMIPN VIII)",
+      "company": "Politeknik Negeri Ujung Pandang",
+      "period": "2026",
+      "icon": "https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/webp/obs.webp",
+      "description": "Bertindak sebagai operator teknis broadcasting (livestream) dan kontrol sistem visual display panggung secara real-time pada Sosialisasi KMIPN VIII Tahun 2026 Politeknik Negeri Ujung Pandang.",
+      "documentation": []
+    },
+    {
+      "category": "technical",
+      "role": "Operator Livestream & Visual Display (PKKMB PNUP 2026)",
+      "company": "Politeknik Negeri Ujung Pandang",
+      "period": "2026",
+      "icon": "https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/webp/obs.webp",
+      "description": "Bertindak sebagai operator teknis broadcasting (livestream) dan kontrol sistem visual display panggung secara real-time pada kegiatan Pengenalan Kehidupan Kampus bagi Mahasiswa Baru (PKKMB) PNUP 2026.",
+      "documentation": []
     },
     {
       "category": "technical",
