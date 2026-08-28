@@ -160,7 +160,8 @@
       "icon": "ph-paint-brush-broad",
       "items": [
         { "name": "Figma", "logo": "https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/webp/figma.webp" },
-        { "name": "Canva", "logo": "https://uxwing.com/wp-content/themes/uxwing/download/brands-and-social-media/canva-icon.svg" }
+        { "name": "Canva", "logo": "https://uxwing.com/wp-content/themes/uxwing/download/brands-and-social-media/canva-icon.svg" },
+        { "name": "OBS Studio", "logo_light": "https://cdn.simpleicons.org/obsstudio/000000", "logo_dark": "https://cdn.simpleicons.org/obsstudio/FFFFFF" }
       ]
     }
   ],
