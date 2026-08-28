@@ -225,10 +225,13 @@ function populateProjects(projects) {
     const container = document.getElementById('projectsContainer');
     if (!container) return;
     container.innerHTML = '';
+    
+    // Set container to flex layout that centers trailing items
+    container.className = "flex flex-wrap justify-center gap-8 md:gap-10 w-full text-left";
 
     projects.forEach((project, index) => {
         container.innerHTML += `
-            <div onclick="openProjectModal(${index})" class="cursor-pointer relative group aspect-[16/9] rounded-[2rem] overflow-hidden shadow-md hover:shadow-2xl transition-all duration-500 reveal">
+            <div onclick="openProjectModal(${index})" class="cursor-pointer relative group aspect-[16/9] rounded-[2rem] overflow-hidden shadow-md hover:shadow-2xl transition-all duration-500 reveal w-full md:w-[calc(50%-1.25rem)] lg:w-[calc(33.333%-1.7rem)]">
                 <!-- Background Image -->
                 <img src="${project.image}" alt="${project.title}" onerror="this.src = document.documentElement.classList.contains('dark') ? 'https://placehold.co/640x360/0f172a/ffffff?text=${encodeURIComponent(project.title)}' : 'https://placehold.co/640x360/f3f4f6/1e293b?text=${encodeURIComponent(project.title)}'" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
                 
@@ -477,12 +480,15 @@ function populateCertificates(certs) {
     const container = document.getElementById('certificatesContainer');
     if (!container) return;
     container.innerHTML = '';
+    
+    // Set container to flex layout that centers trailing items
+    container.className = "flex flex-wrap justify-center gap-10 items-start w-full text-left";
 
     certs.forEach(cert => {
         const aspectClass = cert.type === 'portrait' ? 'aspect-[1/1.4]' : 'aspect-[1.4/1]';
         
         container.innerHTML += `
-            <div class="reveal group">
+            <div class="reveal group w-full sm:w-[calc(50%-1.25rem)] lg:w-[calc(33.333%-1.7rem)]">
                 <div class="bg-white dark:bg-dark-card border border-black/10 dark:border-white/10 overflow-hidden hover:shadow-2xl transition-all duration-500">
                     <!-- Image Container with Orientation Logic -->
                     <div class="relative ${aspectClass} overflow-hidden bg-gray-100 dark:bg-gray-800">
@@ -521,8 +527,8 @@ function populateExperience(expList) {
     
     window.allExperiences = expList; // Store globally for modal details
     
-    // Set container to a single responsive grid
-    container.className = "grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-6 md:gap-8 w-full text-left";
+    // Set container to a single responsive flex grid that centers trailing items
+    container.className = "flex flex-wrap justify-center gap-6 md:gap-8 w-full text-left";
 
     const categories = {
         'technical': 'Technical & Event',
@@ -552,7 +558,7 @@ function populateExperience(expList) {
             `;
 
         const card = document.createElement('div');
-        card.className = "group cursor-pointer aspect-square bg-slate-950 border border-black/10 dark:border-white/10 rounded-[2rem] transition-all duration-500 hover:shadow-2xl hover:border-primary-600/30 flex flex-col justify-between relative overflow-hidden reveal";
+        card.className = "group cursor-pointer aspect-square bg-slate-950 border border-black/10 dark:border-white/10 rounded-[2rem] transition-all duration-500 hover:shadow-2xl hover:border-primary-600/30 flex flex-col justify-between relative overflow-hidden reveal w-[calc(50%-0.75rem)] sm:w-[calc(33.333%-1rem)] lg:w-[calc(25%-1.5rem)] xl:w-[calc(20%-1.6rem)]";
         
         card.innerHTML = `
             <!-- Background Assets -->
