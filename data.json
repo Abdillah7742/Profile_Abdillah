@@ -78,6 +78,25 @@
       "link": "https://sipandi.techmaestro23.my.id/",
       "technologies": ["ESP32 & Sensors", "Flask (Python 3.11)", "Firebase RTDB & Firestore", "TailwindCSS", "Docker", "GitHub Actions"],
       "features": ["Real-time Monitoring (Suhu, Kelembaban, Soil Moisture)", "Smart Radar & Bell (Servo Lonceng & Servo Radar)", "Kontrol Jarak Jauh (Trigger Manual & Slider Derajat)", "Ekspor Laporan PDF Historis", "Auto-Provisioning & QR Scan Perangkat"]
+    },
+    {
+      "title": "SIKAP PLN (Sistem Informasi Kepatuhan & Pemantauan)",
+      "category": "SECURITY & WEB DEVELOPMENT",
+      "description": "Platform web internal PLN untuk mengelola, memantau, dan memverifikasi kepatuhan keamanan di seluruh unit kerja secara digital dan terstruktur.",
+      "image": "./assets/pln_sikap_cover.webp",
+      "link": "https://sikap.techmaestro23.my.id/",
+      "logo_light": "./assets/Logo_PLN.png",
+      "logo_dark": "./assets/Logo_PLN.png",
+      "technologies": ["React 18", "Vite", "Laravel 11 REST API", "MySQL 8", "Eloquent ORM"],
+      "features": [
+        "Login via NIP (Autentikasi Pegawai)",
+        "Spreadsheet-like Task Grid (Daftar Tugas Expandable)",
+        "Upload Eviden Dokumen Bukti Kepatuhan",
+        "Verifikasi Eviden (Approve, Revision, Reject)",
+        "Dashboard Monitoring Real-time & Grafik Rekapitulasi",
+        "Manajemen Multi-level Unit (UID -> UP3 -> ULP)",
+        "Audit Trail Otomatis untuk Aksi Kritis"
+      ]
     }
   ],
   "education": [
