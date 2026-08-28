@@ -369,6 +369,8 @@ function initModal() {
     const closeModalBtn = document.getElementById('closeModalBtn');
     const backdrop = document.getElementById('modalBackdrop');
     const viewerBackdrop = document.getElementById('imageViewerModal');
+    const closeExpBtn = document.getElementById('closeExpModalBtn');
+    const expBackdrop = document.getElementById('expModalBackdrop');
     
     if (closeModalBtn) {
         closeModalBtn.addEventListener('click', window.closeProjectModal);
@@ -384,13 +386,22 @@ function initModal() {
             }
         });
     }
+    if (closeExpBtn) {
+        closeExpBtn.addEventListener('click', window.closeExperienceModal);
+    }
+    if (expBackdrop) {
+        expBackdrop.addEventListener('click', window.closeExperienceModal);
+    }
     
     // Close on Escape key
     document.addEventListener('keydown', (e) => {
         if (e.key === 'Escape') {
             const viewer = document.getElementById('imageViewerModal');
+            const expModal = document.getElementById('experienceModal');
             if (viewer && viewer.classList.contains('opacity-100')) {
                 window.closeImageViewer();
+            } else if (expModal && expModal.classList.contains('opacity-100')) {
+                window.closeExperienceModal();
             } else {
                 window.closeProjectModal();
             }
@@ -501,15 +512,87 @@ function populateCertificates(certs) {
 }
 
 // Populate Experience (Modern List Style)
-// Populate Experience (Grouped Category Layout)
+// Populate Experience (1:1 Photo Card Layout with Text Overlays)
 function populateExperience(expList) {
     if (!expList) return;
     const container = document.getElementById('experienceContainer');
     if (!container) return;
     container.innerHTML = '';
     
-    // Change container class to behave as full width flex stack instead of default grid
-    container.className = "flex flex-col gap-20 w-full text-left";
+    window.allExperiences = expList; // Store globally for modal details
+    
+    // Set container to a single responsive grid
+    container.className = "grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-6 md:gap-8 w-full text-left";
+
+    const categories = {
+        'technical': 'Technical & Event',
+        'service': 'Lecturer Project',
+        'campus': 'Leadership & Org'
+    };
+
+    const categoryColors = {
+        'technical': 'bg-blue-50/90 text-blue-600 dark:bg-blue-900/80 dark:text-blue-200 border-blue-200/50 dark:border-blue-500/20',
+        'service': 'bg-emerald-50/90 text-emerald-600 dark:bg-emerald-900/80 dark:text-emerald-200 border-emerald-200/50 dark:border-emerald-500/20',
+        'campus': 'bg-purple-50/90 text-purple-600 dark:bg-purple-900/80 dark:text-purple-200 border-purple-200/50 dark:border-purple-500/20'
+    };
+
+    expList.forEach((exp, globalIndex) => {
+        const colorClass = categoryColors[exp.category] || 'bg-gray-50/90 text-gray-600 dark:bg-gray-900/80 dark:text-gray-200 border-gray-100 dark:border-gray-800';
+        const categoryLabel = categories[exp.category] || 'Experience';
+
+        // Check if there is a photo in documentation
+        const hasPhoto = exp.documentation && exp.documentation.length > 0;
+        const backgroundHtml = hasPhoto
+            ? `<img src="${exp.documentation[0]}" alt="${exp.role}" class="absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">`
+            : `
+                <!-- Fallback premium dark container with subtle gradient -->
+                <div class="absolute inset-0 bg-[#070a13] flex items-center justify-center p-8">
+                    <div class="absolute inset-0 bg-gradient-to-tr from-primary-600/5 to-indigo-600/5 opacity-40 blur-xl"></div>
+                </div>
+            `;
+
+        const card = document.createElement('div');
+        card.className = "group cursor-pointer aspect-square bg-slate-950 border border-black/10 dark:border-white/10 rounded-[2rem] transition-all duration-500 hover:shadow-2xl hover:border-primary-600/30 flex flex-col justify-between relative overflow-hidden reveal";
+        
+        card.innerHTML = `
+            <!-- Background Assets -->
+            ${backgroundHtml}
+            
+            <!-- Bottom darken overlay (z-10) for text legibility -->
+            <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/45 to-transparent z-10"></div>
+
+            <!-- Top Section: Badges (z-20) -->
+            <div class="relative z-20 flex justify-end items-start w-full p-5 md:p-6">
+                <span class="px-2.5 py-0.5 text-[8px] font-black uppercase tracking-wider rounded-full border ${colorClass} backdrop-blur-md">
+                    ${categoryLabel}
+                </span>
+            </div>
+            
+            <!-- Bottom Section: Titles & Info (z-20) -->
+            <div class="relative z-20 w-full p-5 md:p-6 text-left">
+                <span class="text-[9px] font-bold text-primary-400 dark:text-primary-300 block mb-0.5">${exp.period}</span>
+                <h4 class="text-sm md:text-base font-black tracking-tight text-white group-hover:text-primary-300 transition-colors line-clamp-2 leading-tight mb-0.5">
+                    ${exp.role}
+                </h4>
+                <p class="text-[10px] font-medium text-slate-400 line-clamp-1">
+                    ${exp.company}
+                </p>
+            </div>
+        `;
+
+        // Attach listener dynamically
+        card.addEventListener('click', () => {
+            window.openExperienceModal(globalIndex);
+        });
+
+        container.appendChild(card);
+    });
+}
+
+// ======== EXPERIENCE MODAL LOGIC ========
+window.openExperienceModal = function(index) {
+    const exp = window.allExperiences[index];
+    if (!exp) return;
 
     const categories = {
         'technical': 'Technical & Event Production',
@@ -517,74 +600,65 @@ function populateExperience(expList) {
         'campus': 'Leadership, Organization & Events'
     };
 
-    const typeIcons = {
-        'technical': 'ph-cpu',
-        'service': 'ph-chalkboard-teacher',
-        'campus': 'ph-users-three'
-    };
+    document.getElementById('expModalCategory').textContent = categories[exp.category] || 'Experience';
+    document.getElementById('expModalPeriod').textContent = exp.period;
+    document.getElementById('expModalRole').textContent = exp.role;
+    document.getElementById('expModalCompany').textContent = exp.company;
+    document.getElementById('expModalDescription').textContent = exp.description;
 
-    // Group items
-    const grouped = {
-        'technical': [],
-        'service': [],
-        'campus': []
-    };
-
-    expList.forEach(exp => {
-        if (grouped[exp.category]) {
-            grouped[exp.category].push(exp);
-        } else {
-            grouped['campus'].push(exp);
-        }
-    });
-
-    // Render grouped layout
-    for (const key in grouped) {
-        const items = grouped[key];
-        if (items.length === 0) continue;
-
-        const categoryTitle = categories[key];
-        const categoryIcon = typeIcons[key];
-
-        let itemsHtml = '';
-        items.forEach(exp => {
-            itemsHtml += `
-                <div class="group bg-white dark:bg-[#0b0f19] border border-black/5 dark:border-white/10 p-8 rounded-3xl transition-all duration-500 hover:shadow-xl hover:border-primary-600/30 flex flex-col justify-between min-h-[220px]">
-                    <div>
-                        <div class="flex justify-between items-center mb-5">
-                            <span class="text-[9px] font-black uppercase tracking-widest bg-primary-50 dark:bg-primary-600/10 text-primary-600 dark:text-primary-400 px-3 py-1 rounded-full border border-primary-100/50 dark:border-primary-500/10">
-                                ${exp.period}
-                            </span>
+    // Handle documentation photos
+    const docsContainer = document.getElementById('expModalDocsContainer');
+    const docsGrid = document.getElementById('expModalDocsGrid');
+    
+    if (docsGrid && docsContainer) {
+        docsGrid.innerHTML = '';
+        if (exp.documentation && exp.documentation.length > 0) {
+            docsContainer.classList.remove('hidden');
+            // Limit to max 5
+            const docs = exp.documentation.slice(0, 5);
+            // Dynamic/random ratios
+            const ratios = ['aspect-[16/9]', 'aspect-[4/3]', 'aspect-square', 'aspect-[3/2]'];
+            
+            docs.forEach((imgUrl, i) => {
+                const ratioClass = ratios[i % ratios.length];
+                docsGrid.innerHTML += `
+                    <div onclick="openImageViewer('expDocImg_${i}')" class="group/doc cursor-pointer overflow-hidden rounded-2xl border border-black/10 dark:border-white/10 shadow-sm hover:shadow-md transition-all duration-300 relative ${ratioClass}">
+                        <img id="expDocImg_${i}" src="${imgUrl}" alt="Dokumentasi ${i+1}" class="w-full h-full object-cover group-hover/doc:scale-105 transition-transform duration-500">
+                        <div class="absolute inset-0 bg-black/25 opacity-0 group-hover/doc:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                            <i class="ph ph-magnifying-glass-plus text-white text-xl font-bold"></i>
                         </div>
-                        
-                        <h4 class="text-lg md:text-xl font-bold tracking-tight text-slate-900 dark:text-white mb-1 group-hover:text-primary-600 transition-colors">${exp.role}</h4>
-                        <p class="text-xs font-bold text-gray-400 dark:text-gray-500 uppercase tracking-widest mb-4">${exp.company}</p>
-                        <p class="text-gray-500 dark:text-gray-400 text-sm leading-relaxed">${exp.description}</p>
                     </div>
-                </div>
-            `;
-        });
-
-        container.innerHTML += `
-            <div class="reveal w-full">
-                <!-- Group Subheader Header -->
-                <div class="flex items-center gap-4 mb-8 border-b border-black/5 dark:border-white/5 pb-4">
-                    <div class="w-11 h-11 rounded-2xl bg-primary-600/10 flex items-center justify-center text-primary-600">
-                        <i class="ph ${categoryIcon} text-xl"></i>
-                    </div>
-                    <h3 class="text-base md:text-lg font-sans font-black uppercase tracking-wider text-slate-900 dark:text-white">
-                        ${categoryTitle}
-                    </h3>
-                </div>
-                
-                <!-- Category Grid Cards -->
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
-                    ${itemsHtml}
-                </div>
-            </div>
-        `;
+                `;
+            });
+        } else {
+            docsContainer.classList.add('hidden');
+        }
     }
-}
+
+    const modal = document.getElementById('experienceModal');
+    const content = document.getElementById('expModalContent');
+    
+    modal.classList.remove('pointer-events-none', 'opacity-0');
+    modal.classList.add('opacity-100');
+    content.classList.remove('scale-95', 'opacity-0');
+    content.classList.add('scale-100', 'opacity-100');
+    
+    // Prevent body scroll
+    document.body.style.overflow = 'hidden';
+};
+
+window.closeExperienceModal = function() {
+    const modal = document.getElementById('experienceModal');
+    const content = document.getElementById('expModalContent');
+    
+    modal.classList.remove('opacity-100');
+    modal.classList.add('pointer-events-none', 'opacity-0');
+    content.classList.remove('scale-100', 'opacity-100');
+    content.classList.add('scale-95', 'opacity-0');
+    
+    // Restore body scroll
+    document.body.style.overflow = '';
+};
 
 // Populate Social Media
 function populateSocials(socials) {

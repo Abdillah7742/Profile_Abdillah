@@ -166,84 +166,114 @@
       "role": "Divisi Website",
       "company": "KMIPN VIII",
       "period": "2026",
-      "description": "Bertanggung jawab dalam perancangan, pengembangan fitur, serta pemeliharaan sistem website untuk kegiatan kompetisi nasional KMIPN VIII."
+      "icon": "https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/webp/chrome.webp",
+      "description": "Bertanggung jawab dalam perancangan, pengembangan fitur, serta pemeliharaan sistem website untuk kegiatan kompetisi nasional KMIPN VIII.",
+      "documentation": [
+        "https://placehold.co/800x450/f3f4f6/1e293b?text=KMIPN+Website+Preview",
+        "https://placehold.co/600x600/f3f4f6/1e293b?text=Fitur+Website"
+      ]
     },
     {
       "category": "technical",
       "role": "Operator Livestream & Visual Display",
       "company": "Event Skala Nasional & Kampus",
       "period": "2026",
-      "description": "Bertindak sebagai operator teknis broadcasting (livestream) dan kontrol sistem visual display panggung secara real-time pada berbagai agenda besar seperti Seminar Nasional Sensation, Sosialisasi KMIPN VIII Tahun 2026 PNUP, serta PKKMB PNUP 2026."
+      "icon": "https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/webp/obs.webp",
+      "description": "Bertindak sebagai operator teknis broadcasting (livestream) dan kontrol sistem visual display panggung secara real-time pada berbagai agenda besar seperti Seminar Nasional Sensation, Sosialisasi KMIPN VIII Tahun 2026 PNUP, serta PKKMB PNUP 2026.",
+      "documentation": [
+        "https://placehold.co/800x450/f3f4f6/1e293b?text=Livestream+Setup",
+        "https://placehold.co/600x800/f3f4f6/1e293b?text=Visual+Control"
+      ]
     },
     {
       "category": "technical",
       "role": "Operator Visual Display",
       "company": "Seminar Hard Skill D-Verse 2025",
       "period": "2025",
-      "description": "Mengoperasikan dan mengontrol keluaran visual layar utama/proyektor selama sesi materi seminar teknis berlangsung."
+      "icon": "https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/webp/obs.webp",
+      "description": "Mengoperasikan dan mengontrol keluaran visual layar utama/proyektor selama sesi materi seminar teknis berlangsung.",
+      "documentation": []
     },
     {
       "category": "service",
       "role": "Anggota Tim Proyek Pengabdian Dosen",
       "company": "Digitalisasi Sistem Penjualan BUMDes",
       "period": "2025",
-      "description": "BUMDes dalam Rantai Pasok Kebutuhan Barang Desa melalui Digitalisasi Sistem Penjualan untuk Meningkatkan Ekonomi Masyarakat. Membantu implementasi dan pendampingan adopsi sistem penjualan digital guna mengoptimalkan rantai pasok serta efisiensi transaksi ekonomi desa."
+      "icon": "https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/webp/woocommerce.webp",
+      "description": "BUMDes dalam Rantai Pasok Kebutuhan Barang Desa melalui Digitalisasi Sistem Penjualan untuk Meningkatkan Ekonomi Masyarakat. Membantu implementasi dan pendampingan adopsi sistem penjualan digital guna mengoptimalkan rantai pasok serta efisiensi transaksi ekonomi desa.",
+      "documentation": []
     },
     {
       "category": "service",
       "role": "Anggota Tim Pelaksana",
       "company": "Pelatihan Cybersafety & Digital Parenting",
       "period": "2025",
-      "description": "Penguatan Kompetensi Digital Parenting Orang Tua melalui Pelatihan Cybersafety dan Etika Digital untuk Mencegah Risiko Internet pada Siswa SD di SD Inpres Kampus Unhas Makassar. Membantu penyampaian materi, pendampingan teknis, serta edukasi keamanan siber dan etika internet sehat bagi orang tua murid."
+      "icon": "https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/webp/adguard-home.webp",
+      "description": "Penguatan Kompetensi Digital Parenting Orang Tua melalui Pelatihan Cybersafety dan Etika Digital untuk Mencegah Risiko Internet pada Siswa SD di SD Inpres Kampus Unhas Makassar. Membantu penyampaian materi, pendampingan teknis, serta edukasi keamanan siber dan etika internet sehat bagi orang tua murid.",
+      "documentation": []
     },
     {
       "category": "campus",
       "role": "Sekretaris Departemen Media Kreatif",
       "company": "HIMATIK PNUP",
       "period": "2024 - Sekarang",
-      "description": "Mengoordinasikan program kerja divisi media kreatif, serta memimpin produksi konten visual, branding digital, dan dokumentasi organisasi."
+      "icon": "https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/webp/figma.webp",
+      "description": "Mengoordinasikan program kerja divisi media kreatif, serta memimpin produksi konten visual, branding digital, dan dokumentasi organisasi.",
+      "documentation": []
     },
     {
       "category": "campus",
       "role": "Staf Kementerian Komunikasi & Informatika (Kominfo)",
       "company": "BEM KMPNUP",
       "period": "2024 - Sekarang",
-      "description": "Mengelola saluran informasi kampus, menyusun materi publikasi resmi, dan mendukung komunikasi publik tingkat politeknik."
+      "icon": "https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/webp/slack.webp",
+      "description": "Mengelola saluran informasi kampus, menyusun materi publikasi resmi, dan mendukung komunikasi publik tingkat politeknik.",
+      "documentation": []
     },
     {
       "category": "campus",
       "role": "Koordinator Divisi Perlengkapan",
       "company": "LOGIKA HIMATIK PNUP (Kaderisasi Jurusan TIK)",
       "period": "2025",
-      "description": "Memimpin manajemen logistik, pengadaan sarana, dan alur teknis operasional lapangan untuk kegiatan kaderisasi jurusan TIK."
+      "icon": "https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/webp/homeassistant.webp",
+      "description": "Memimpin manajemen logistik, pengadaan sarana, dan alur teknis operasional lapangan untuk kegiatan kaderisasi jurusan TIK.",
+      "documentation": []
     },
     {
       "category": "campus",
       "role": "Steering Committee (SC)",
       "company": "Inaugurasi Angkatan",
       "period": "2024",
-      "description": "Mengarahkan konsep pagelaran seni (teater, tari, musik) dan melakukan supervisi jalannya produksi acara pentas seni angkatan."
+      "icon": "https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/webp/trello.webp",
+      "description": "Mengarahkan konsep pagelaran seni (teater, tari, musik) dan melakukan supervisi jalannya produksi acara pentas seni angkatan.",
+      "documentation": []
     },
     {
       "category": "campus",
       "role": "Anggota Divisi Acara",
       "company": "Seminar Nasional Sensation",
       "period": "2024",
-      "description": "Terlibat dalam penyusunan konsep dan rundown acara seminar skala nasional, koordinasi narasumber, serta manajemen alur pelaksanaan acara."
+      "icon": "https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/webp/google-calendar.webp",
+      "description": "Terlibat dalam penyusunan konsep dan rundown acara seminar skala nasional, koordinasi narasumber, serta manajemen alur pelaksanaan acara.",
+      "documentation": []
     },
     {
       "category": "campus",
       "role": "Anggota Divisi Acara",
       "company": "D-Verse 2025",
       "period": "2025",
-      "description": "Menyusun susunan acara (rundown), mengoordinasikan pengisi acara/pemateri, serta memastikan kelancaran alur teknis sesi acara."
+      "icon": "https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/webp/google-calendar.webp",
+      "description": "Menyusun susunan acara (rundown), mengoordinasikan pengisi acara/pemateri, serta memastikan kelancaran alur teknis sesi acara.",
+      "documentation": []
     },
     {
       "category": "campus",
       "role": "Anggota Divisi Perlengkapan",
       "company": "Bakti Sosial (Baksos) HIMATIK PNUP",
       "period": "2024",
-      "description": "Mengelola inventaris perlengkapan kegiatan, kebutuhan sarana logistik, dan kelancaran operasional bakti sosial di lapangan."
+      "icon": "https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/webp/homeassistant.webp",
+      "description": "Mengelola inventaris perlengkapan kegiatan, kebutuhan sarana logistik, dan kelancaran operasional bakti sosial di lapangan.",
+      "documentation": []
     }
   ]
 }
