@@ -34,8 +34,8 @@
       "description": "Platform digital berbasis web untuk mengoptimalkan pengumpulan dan seleksi proposal Program Kreativitas Mahasiswa (PKM) menggunakan otomatisasi analisis sistematika penulisan.",
       "image": "./assets/project-pandai.svg",
       "link": "https://pandai.techmaestro23.my.id",
-      "logo_light": "./assets/logo-pandai-light.png",
-      "logo_dark": "./assets/logo-pandai-dark.png",
+      "logo_light": "./assets/logo-pandai-light.webp",
+      "logo_dark": "./assets/logo-pandai-dark.webp",
       "technologies": ["Flask (Python)", "Scikit-Learn (AI)", "MySQL", "python-docx", "JavaScript"],
       "features": ["Validasi Sistematika Format Otomatis", "Prediksi Kategori PKM berbasis AI", "Unggah Proposal & Ekstraksi Teks", "Dashboard Admin & Reviewer", "Role Management (User, Reviewer, Admin)"]
     },
@@ -43,10 +43,10 @@
       "title": "Website Resmi HIMATIK PNUP",
       "category": "WEB DEVELOPMENT",
       "description": "Pusat informasi resmi organisasi untuk mendukung kebutuhan informasi, publikasi, manajemen arsip, serta database keanggotaan keluarga besar HIMATIK PNUP.",
-      "image": "./assets/himatik.png",
+      "image": "./assets/himatik.webp",
       "link": "https://himatikpnup.my.id/",
-      "logo_light": "./assets/techbond.png",
-      "logo_dark": "./assets/techbond.png",
+      "logo_light": "./assets/techbond.webp",
+      "logo_dark": "./assets/techbond.webp",
       "technologies": ["Laravel 12.x", "Filament PHP v3 (TALL Stack)", "MySQL", "Bootstrap", "GitHub Actions"],
       "features": ["Dashboard Admin Terintegrasi (Filament PHP)", "Pencarian & Live Filter Data Keluarga", "Validasi NIM Otomatis & Aturan NIM", "Import Excel (CSV) Aman", "Manajemen Arsip Surat & Dokumen"]
     },
@@ -54,10 +54,10 @@
       "title": "KMIPN VIII 2026",
       "category": "WEB DEVELOPMENT",
       "description": "Platform resmi Kompetisi Mahasiswa Informatika Politeknik Nasional (KMIPN VIII) yang diselenggarakan oleh Politeknik Negeri Ujung Pandang.",
-      "image": "./assets/kmipn.png",
+      "image": "./assets/kmipn.webp",
       "link": "https://kmipn.poliupg.ac.id/",
-      "logo_light": "./assets/logo_kmipn.jpg",
-      "logo_dark": "./assets/logo_kmipn.jpg",
+      "logo_light": "./assets/logo_kmipn.webp",
+      "logo_dark": "./assets/logo_kmipn.webp",
       "technologies": ["Laravel 12", "Livewire 4", "Tailwind CSS 4", "Laravel Socialite (Google OAuth)", "MySQL"],
       "features": ["Pendaftaran & Verifikasi Tim (Panitia)", "Manajemen Proposal (Draft & Send)", "Autentikasi Verifikasi Email & Google OAuth", "Role-based Access (Admin, Panitia, Juri, Peserta)", "Manajemen Konten & Settings"]
     },
@@ -65,7 +65,7 @@
       "title": "SIASET PNUP",
       "category": "WEB DEVELOPMENT",
       "description": "Sistem Informasi Aset Terpadu Politeknik Negeri Ujung Pandang untuk mendigitalkan, mempermudah, dan mengoptimalkan manajemen, peminjaman, serta pemantauan aset.",
-      "image": "./assets/siaset.png",
+      "image": "./assets/siaset.webp",
       "link": "https://siaset.techmaestro23.my.id",
       "technologies": ["Laravel 12.x", "Cropper.js", "Tailwind CSS", "Alpine.js", "Docker & Docker Compose", "MariaDB / MySQL"],
       "features": ["Interactive Image Cropper & WebP Compression", "Multi-role Workflows (Tenant, Staf Umum, Staf Keuangan, Staf Rumah Tangga, Super Admin)", "Kalender Okupansi Real-time", "Aktivitas Log Staf", "CI/CD Auto-deployment (GitHub Actions)"]
@@ -74,7 +74,7 @@
       "title": "SIPANDI (Sistem Pemantauan Padi Terintegrasi)",
       "category": "IoT & WEB DEVELOPMENT",
       "description": "Platform IoT pertanian modern dan dashboard interaktif berbasis web untuk memantau kondisi persawahan real-time serta otomatisasi pengusiran hama burung pipit.",
-      "image": "./assets/sipandi.png",
+      "image": "./assets/sipandi.webp",
       "link": "https://sipandi.techmaestro23.my.id/",
       "technologies": ["ESP32 & Sensors", "Flask (Python 3.11)", "Firebase RTDB & Firestore", "TailwindCSS", "Docker", "GitHub Actions"],
       "features": ["Real-time Monitoring (Suhu, Kelembaban, Soil Moisture)", "Smart Radar & Bell (Servo Lonceng & Servo Radar)", "Kontrol Jarak Jauh (Trigger Manual & Slider Derajat)", "Ekspor Laporan PDF Historis", "Auto-Provisioning & QR Scan Perangkat"]
@@ -173,7 +173,7 @@
       "period": "September 2025 - Juli 2026",
       "icon": "https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/webp/figma.webp",
       "description": "Mengoordinasikan program kerja divisi media kreatif, serta memimpin produksi konten visual, branding digital, dan dokumentasi organisasi.",
-      "documentation": ["./assets/abdi_sekdep_65.png"],
+      "documentation": ["./assets/abdi_sekdep_65.webp"],
       "links": [
         {
           "label": "Lihat di Instagram",
@@ -188,7 +188,7 @@
       "period": "November 2024 - Oktober 2025",
       "icon": "https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/webp/slack.webp",
       "description": "Mengelola saluran informasi kampus, menyusun materi publikasi resmi, dan mendukung komunikasi publik tingkat politeknik.",
-      "documentation": ["./assets/bem_renaissance.jpg"],
+      "documentation": ["./assets/bem_renaissance.webp"],
       "links": [
         {
           "label": "Lihat di Instagram",
@@ -203,7 +203,7 @@
       "period": "April 2026 - Sekarang",
       "icon": "https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/webp/chrome.webp",
       "description": "Bertanggung jawab dalam perancangan, pengembangan fitur, serta pemeliharaan sistem website untuk kegiatan kompetisi nasional KMIPN VIII.",
-      "documentation": ["./assets/kmipn_website_doc.jpg"],
+      "documentation": ["./assets/kmipn_website_doc.webp"],
       "links": []
     },
     {
@@ -213,7 +213,7 @@
       "period": "Desember 2024",
       "icon": "https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/webp/obs.webp",
       "description": "Bertindak sebagai operator teknis broadcasting (livestream) dan kontrol sistem visual display panggung secara real-time pada Seminar Nasional Sensation.",
-      "documentation": ["./assets/livestream_sensation.jpg"],
+      "documentation": ["./assets/livestream_sensation.webp"],
       "links": [
         {
           "label": "YouTube Livestream Sesi 1",
@@ -232,7 +232,7 @@
       "period": "Juni 2026",
       "icon": "https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/webp/obs.webp",
       "description": "Bertindak sebagai operator teknis broadcasting (livestream) dan kontrol sistem visual display panggung secara real-time pada Sosialisasi KMIPN VIII Tahun 2026 Politeknik Negeri Ujung Pandang.",
-      "documentation": ["./assets/kmipn_website_doc.jpg"],
+      "documentation": ["./assets/kmipn_website_doc.webp"],
       "links": [
         {
           "label": "YouTube Sosialisasi",
@@ -247,7 +247,7 @@
       "period": "Agustus 2026",
       "icon": "https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/webp/obs.webp",
       "description": "Bertindak sebagai operator teknis broadcasting (livestream) dan kontrol sistem visual display panggung secara real-time pada kegiatan Pengenalan Kehidupan Kampus bagi Mahasiswa Baru (PKKMB) PNUP 2026.",
-      "documentation": ["./assets/pkkmb_doc_1.jpg", "./assets/pkkmb_doc_2.jpg"],
+      "documentation": ["./assets/pkkmb_doc_1.webp", "./assets/pkkmb_doc_2.webp"],
       "links": [
         {
           "label": "YouTube Livestream PKKMB",
@@ -262,7 +262,7 @@
       "period": "Mei 2025",
       "icon": "https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/webp/obs.webp",
       "description": "Mengoperasikan dan mengontrol keluaran visual layar utama/proyektor selama sesi materi seminar teknis berlangsung.",
-      "documentation": ["./assets/dverse_visual_display.jpg"],
+      "documentation": ["./assets/dverse_visual_display.webp"],
       "links": []
     },
     {
@@ -272,7 +272,7 @@
       "period": "April 2026 - Sekarang",
       "icon": "https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/webp/woocommerce.webp",
       "description": "BUMDes dalam Rantai Pasok Kebutuhan Barang Desa melalui Digitalisasi Sistem Penjualan untuk Meningkatkan Ekonomi Masyarakat. Membantu implementasi dan pendampingan adopsi sistem penjualan digital guna mengoptimalkan rantai pasok serta efisiensi transaksi ekonomi desa.",
-      "documentation": ["./assets/bumdes_doc.png"],
+      "documentation": ["./assets/bumdes_doc.webp"],
       "links": []
     },
     {
@@ -292,7 +292,7 @@
       "period": "Juni - Desember 2024",
       "icon": "https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/webp/homeassistant.webp",
       "description": "Memimpin manajemen logistik, pengadaan sarana, dan alur teknis operasional lapangan untuk kegiatan kaderisasi jurusan TIK.",
-      "documentation": ["./assets/logika_perlengkapan.jpg"],
+      "documentation": ["./assets/logika_perlengkapan.webp"],
       "links": []
     },
     {
@@ -302,7 +302,7 @@
       "period": "Maret - Mei 2025",
       "icon": "https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/webp/google-calendar.webp",
       "description": "Menyusun susunan acara (rundown), mengoordinasikan pengisi acara/pemateri, serta memastikan kelancaran alur teknis sesi acara.",
-      "documentation": ["./assets/dverse_acara.jpg"],
+      "documentation": ["./assets/dverse_acara.webp"],
       "links": []
     },
     {
@@ -312,7 +312,7 @@
       "period": "Desember 2024 - Mei 2025",
       "icon": "https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/webp/trello.webp",
       "description": "Mengarahkan konsep pagelaran seni (teater, tari, musik) dan melakukan supervisi jalannya produksi acara pentas seni angkatan.",
-      "documentation": ["./assets/inaugurasi_sc.jpg"],
+      "documentation": ["./assets/inaugurasi_sc.webp"],
       "links": []
     },
     {
@@ -322,7 +322,7 @@
       "period": "Oktober - Desember 2024",
       "icon": "https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/webp/google-calendar.webp",
       "description": "Terlibat dalam penyusunan konsep dan rundown acara seminar skala nasional, koordinasi narasumber, serta manajemen alur pelaksanaan acara.",
-      "documentation": ["./assets/sensation_acara.jpg"],
+      "documentation": ["./assets/sensation_acara.webp"],
       "links": []
     },
     {
@@ -332,7 +332,7 @@
       "period": "Juli 2024",
       "icon": "https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/webp/homeassistant.webp",
       "description": "Mengelola inventaris perlengkapan kegiatan, kebutuhan sarana logistik, dan kelancaran operasional bakti sosial di lapangan.",
-      "documentation": ["./assets/baksos_perlengkapan.jpg"],
+      "documentation": ["./assets/baksos_perlengkapan.webp"],
       "links": []
     }
   ]
