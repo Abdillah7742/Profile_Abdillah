@@ -43,8 +43,10 @@
       "title": "Website Resmi HIMATIK PNUP",
       "category": "WEB DEVELOPMENT",
       "description": "Pusat informasi resmi organisasi untuk mendukung kebutuhan informasi, publikasi, manajemen arsip, serta database keanggotaan keluarga besar HIMATIK PNUP.",
-      "image": "./assets/project-himatik.png",
+      "image": "./assets/himatik.png",
       "link": "https://himatikpnup.my.id/",
+      "logo_light": "./assets/techbond.png",
+      "logo_dark": "./assets/techbond.png",
       "technologies": ["Laravel 12.x", "Filament PHP v3 (TALL Stack)", "MySQL", "Bootstrap", "GitHub Actions"],
       "features": ["Dashboard Admin Terintegrasi (Filament PHP)", "Pencarian & Live Filter Data Keluarga", "Validasi NIM Otomatis & Aturan NIM", "Import Excel (CSV) Aman", "Manajemen Arsip Surat & Dokumen"]
     },
@@ -52,8 +54,10 @@
       "title": "KMIPN VIII 2026",
       "category": "WEB DEVELOPMENT",
       "description": "Platform resmi Kompetisi Mahasiswa Informatika Politeknik Nasional (KMIPN VIII) yang diselenggarakan oleh Politeknik Negeri Ujung Pandang.",
-      "image": "./assets/project-kmipn.png",
-      "link": "https://github.com/Abdillah7742/kmipn-2026",
+      "image": "./assets/kmipn.png",
+      "link": "https://kmipn.poliupg.ac.id/",
+      "logo_light": "./assets/logo_kmipn.jpg",
+      "logo_dark": "./assets/logo_kmipn.jpg",
       "technologies": ["Laravel 12", "Livewire 4", "Tailwind CSS 4", "Laravel Socialite (Google OAuth)", "MySQL"],
       "features": ["Pendaftaran & Verifikasi Tim (Panitia)", "Manajemen Proposal (Draft & Send)", "Autentikasi Verifikasi Email & Google OAuth", "Role-based Access (Admin, Panitia, Juri, Peserta)", "Manajemen Konten & Settings"]
     },
@@ -61,7 +65,7 @@
       "title": "SIASET PNUP",
       "category": "WEB DEVELOPMENT",
       "description": "Sistem Informasi Aset Terpadu Politeknik Negeri Ujung Pandang untuk mendigitalkan, mempermudah, dan mengoptimalkan manajemen, peminjaman, serta pemantauan aset.",
-      "image": "./assets/project-siaset.png",
+      "image": "./assets/siaset.png",
       "link": "https://siaset.techmaestro23.my.id",
       "technologies": ["Laravel 12.x", "Cropper.js", "Tailwind CSS", "Alpine.js", "Docker & Docker Compose", "MariaDB / MySQL"],
       "features": ["Interactive Image Cropper & WebP Compression", "Multi-role Workflows (Tenant, Staf Umum, Staf Keuangan, Staf Rumah Tangga, Super Admin)", "Kalender Okupansi Real-time", "Aktivitas Log Staf", "CI/CD Auto-deployment (GitHub Actions)"]
@@ -70,7 +74,7 @@
       "title": "SIPANDI (Sistem Pemantauan Padi Terintegrasi)",
       "category": "IoT & WEB DEVELOPMENT",
       "description": "Platform IoT pertanian modern dan dashboard interaktif berbasis web untuk memantau kondisi persawahan real-time serta otomatisasi pengusiran hama burung pipit.",
-      "image": "./assets/project-sipandi.png",
+      "image": "./assets/sipandi.png",
       "link": "https://sipandi.techmaestro23.my.id/",
       "technologies": ["ESP32 & Sensors", "Flask (Python 3.11)", "Firebase RTDB & Firestore", "TailwindCSS", "Docker", "GitHub Actions"],
       "features": ["Real-time Monitoring (Suhu, Kelembaban, Soil Moisture)", "Smart Radar & Bell (Servo Lonceng & Servo Radar)", "Kontrol Jarak Jauh (Trigger Manual & Slider Derajat)", "Ekspor Laporan PDF Historis", "Auto-Provisioning & QR Scan Perangkat"]

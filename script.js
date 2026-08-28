@@ -273,15 +273,61 @@ window.openProjectModal = function(index) {
     document.getElementById('modalTitle').textContent = project.title;
     document.getElementById('modalDescription').textContent = project.description;
 
-    // Set modal logos (Light and Dark versions side by side)
+    // Set modal logos (Light and Dark versions side by side or single)
     const logosContainer = document.getElementById('modalLogosContainer');
     const logoLight = document.getElementById('modalLogoLight');
     const logoDark = document.getElementById('modalLogoDark');
     
+    const lightWrapper = logoLight.parentElement;
+    const darkWrapper = logoDark.parentElement;
+    
+    // Reset wrapper displays and labels
+    lightWrapper.classList.remove('hidden');
+    darkWrapper.classList.remove('hidden');
+    
+    const lightSpan = lightWrapper.querySelector('span');
+    const darkSpan = darkWrapper.querySelector('span');
+    if (lightSpan) {
+        lightSpan.textContent = 'Version Light';
+        lightSpan.classList.remove('hidden');
+    }
+    if (darkSpan) {
+        darkSpan.textContent = 'Version Dark';
+        darkSpan.classList.remove('hidden');
+    }
+
     if (project.logo_light && project.logo_dark) {
-        logoLight.src = project.logo_light;
-        logoDark.src = project.logo_dark;
         logosContainer.classList.remove('hidden');
+        
+        // If both URLs are identical, render only 1 logo centered
+        if (project.logo_light === project.logo_dark) {
+            logoLight.src = project.logo_light;
+            darkWrapper.classList.add('hidden');
+            if (lightSpan) lightSpan.classList.add('hidden');
+            
+            // Custom background logic for TechBond logo to ensure visibility
+            if (project.logo_light.toLowerCase().includes('techbond')) {
+                logoLight.classList.remove('bg-white');
+                logoLight.classList.add('bg-white'); // ensure white background
+            }
+        } else {
+            logoLight.src = project.logo_light;
+            logoDark.src = project.logo_dark;
+            
+            // Custom background logic for TechBond logo to ensure visibility
+            if (project.logo_light.toLowerCase().includes('techbond') || project.logo_dark.toLowerCase().includes('techbond')) {
+                logoDark.classList.remove('bg-slate-900');
+                logoDark.classList.add('bg-white');
+            } else {
+                logoDark.classList.remove('bg-white');
+                logoDark.classList.add('bg-slate-900');
+            }
+        }
+    } else if (project.logo_light || project.logo_dark) {
+        logosContainer.classList.remove('hidden');
+        logoLight.src = project.logo_light || project.logo_dark;
+        darkWrapper.classList.add('hidden');
+        if (lightSpan) lightSpan.classList.add('hidden');
     } else {
         logosContainer.classList.add('hidden');
     }
