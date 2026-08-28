@@ -501,58 +501,89 @@ function populateCertificates(certs) {
 }
 
 // Populate Experience (Modern List Style)
+// Populate Experience (Grouped Category Layout)
 function populateExperience(expList) {
     if (!expList) return;
     const container = document.getElementById('experienceContainer');
     if (!container) return;
     container.innerHTML = '';
+    
+    // Change container class to behave as full width flex stack instead of default grid
+    container.className = "flex flex-col gap-20 w-full text-left";
 
-    const typeColors = {
-        'PKL': 'bg-primary-600 text-white',
-        'Organisasi': 'bg-gray-200 dark:bg-gray-800 text-black dark:text-white',
-        'Panitia': 'bg-black dark:bg-white text-white dark:text-black',
-        'Teamwork': 'border border-primary-600 text-primary-600'
+    const categories = {
+        'technical': 'Technical & Event Production',
+        'service': 'Lecturer Community Service Projects',
+        'campus': 'Leadership, Organization & Events'
     };
 
     const typeIcons = {
-        'PKL': 'ph-briefcase',
-        'Organisasi': 'ph-users',
-        'Panitia': 'ph-megaphone',
-        'Teamwork': 'ph-users-three'
+        'technical': 'ph-cpu',
+        'service': 'ph-chalkboard-teacher',
+        'campus': 'ph-users-three'
+    };
+
+    // Group items
+    const grouped = {
+        'technical': [],
+        'service': [],
+        'campus': []
     };
 
     expList.forEach(exp => {
-        const colorClass = typeColors[exp.type] || 'bg-gray-100 dark:bg-gray-800';
-        const iconClass = typeIcons[exp.type] || 'ph-star';
+        if (grouped[exp.category]) {
+            grouped[exp.category].push(exp);
+        } else {
+            grouped['campus'].push(exp);
+        }
+    });
+
+    // Render grouped layout
+    for (const key in grouped) {
+        const items = grouped[key];
+        if (items.length === 0) continue;
+
+        const categoryTitle = categories[key];
+        const categoryIcon = typeIcons[key];
+
+        let itemsHtml = '';
+        items.forEach(exp => {
+            itemsHtml += `
+                <div class="group bg-white dark:bg-[#0b0f19] border border-black/5 dark:border-white/10 p-8 rounded-3xl transition-all duration-500 hover:shadow-xl hover:border-primary-600/30 flex flex-col justify-between min-h-[220px]">
+                    <div>
+                        <div class="flex justify-between items-center mb-5">
+                            <span class="text-[9px] font-black uppercase tracking-widest bg-primary-50 dark:bg-primary-600/10 text-primary-600 dark:text-primary-400 px-3 py-1 rounded-full border border-primary-100/50 dark:border-primary-500/10">
+                                ${exp.period}
+                            </span>
+                        </div>
+                        
+                        <h4 class="text-lg md:text-xl font-bold tracking-tight text-slate-900 dark:text-white mb-1 group-hover:text-primary-600 transition-colors">${exp.role}</h4>
+                        <p class="text-xs font-bold text-gray-400 dark:text-gray-500 uppercase tracking-widest mb-4">${exp.company}</p>
+                        <p class="text-gray-500 dark:text-gray-400 text-sm leading-relaxed">${exp.description}</p>
+                    </div>
+                </div>
+            `;
+        });
 
         container.innerHTML += `
-            <div class="reveal group">
-                <div class="bg-white dark:bg-dark-card border border-black/5 dark:border-white/5 p-8 h-full transition-all duration-500 hover:shadow-xl hover:border-primary-600/30">
-                    <div class="flex justify-between items-start mb-6">
-                        <div class="w-12 h-12 rounded-2xl bg-primary-600/5 flex items-center justify-center text-primary-600">
-                            <i class="ph ${iconClass} text-2xl"></i>
-                        </div>
-                        <span class="px-3 py-1 text-[9px] font-black uppercase tracking-widest rounded-full ${colorClass}">
-                            ${exp.type}
-                        </span>
+            <div class="reveal w-full">
+                <!-- Group Subheader Header -->
+                <div class="flex items-center gap-4 mb-8 border-b border-black/5 dark:border-white/5 pb-4">
+                    <div class="w-11 h-11 rounded-2xl bg-primary-600/10 flex items-center justify-center text-primary-600">
+                        <i class="ph ${categoryIcon} text-xl"></i>
                     </div>
-                    
-                    <div class="mb-4">
-                        <h4 class="text-xl font-bold tracking-tight mb-1 group-hover:text-primary-600 transition-colors">${exp.role}</h4>
-                        <p class="text-sm font-bold text-gray-400 uppercase tracking-widest">${exp.company}</p>
-                    </div>
-                    
-                    <div class="text-[10px] font-bold text-primary-600/60 uppercase tracking-widest mb-4">
-                        ${exp.period}
-                    </div>
-                    
-                    <p class="text-gray-500 dark:text-gray-400 text-sm leading-relaxed">
-                        ${exp.description}
-                    </p>
+                    <h3 class="text-base md:text-lg font-sans font-black uppercase tracking-wider text-slate-900 dark:text-white">
+                        ${categoryTitle}
+                    </h3>
+                </div>
+                
+                <!-- Category Grid Cards -->
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
+                    ${itemsHtml}
                 </div>
             </div>
         `;
-    });
+    }
 }
 
 // Populate Social Media
