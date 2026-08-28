@@ -210,7 +210,7 @@ function populateSkills(skills) {
                     </h3>
 
                     <!-- Logos Row -->
-                    <div class="flex flex-wrap justify-center gap-3 max-w-[210px] mx-auto relative z-10 mt-4">
+                    <div class="flex flex-wrap justify-center gap-3 mx-auto relative z-10 mt-4" style="max-width: 210px;">
                         ${itemsHtml}
                     </div>
                 </div>
